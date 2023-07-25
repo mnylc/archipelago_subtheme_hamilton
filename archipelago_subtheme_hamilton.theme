@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ */
+function archipelago_subtheme_hamilton_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-tertiary' => t('Tertiary'),
+    'bg-quaternary' => t('Quaternary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  );
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-tertiary' => t('Tertiary'),
+    'bg-quaternary' => t('Quaternary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  );
+}
+
+/**
+ * Prepares variables for `breadcrumb.html.twig`.
+ */
+function archipelago_subtheme_hamilton_preprocess_breadcrumb(&$variables){
+  // Remove 'Home' from breadcrumb trail.
+  if (count($variables['breadcrumb'])) {
+    array_shift($variables['breadcrumb']);
+  }
+}
