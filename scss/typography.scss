@@ -5,7 +5,8 @@
 //@import url("https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900,900italic");
 //@import url("https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900");
 //
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;400;600;700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 // Font, line-height, and color for body text, headings, and more.
 $font-family-sans-serif:  'Source Sans Pro', sans-serif;
@@ -14,25 +15,31 @@ $font-family-serif: Georgia, serif !default;
 $font-family-sans-serif-alternate: 'Oswald', sans-serif;
 $font-family-base: $font-family-sans-serif;
 
+// HAMILTON defined fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+$font-family-hamilton-base: 'Open Sans', sans-serif;
+$font-family-hamilton-theme: "Mercury Text G1 A", "Mercury Text G1 B", "Mercury", Georgia, "Times New Roman", serif;
+$h3-text-indent: 25pt; // ADDED indenting variable to easily change across the board - 08/09/2023
 
-$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-base: 1.1rem; // Assumes the browser default, typically `16px`
 $font-size-lg: $font-size-base * 1.25;
-$font-size-sm: $font-size-base * .875;
+$font-size-sm: $font-size-base * .9; // ADJUSTED size-sm for fonts since it looked a hair too small (it was originally 0.875) - 08/11/2023
 $font-size-xs: $font-size-base * .75;
-$font-weight-light: 300;
-$font-weight-normal: normal;
+$font-weight-light: 200; // SET the font-light weight even lighter (originally "300") - 08/11/2023
+$font-weight-normal: 300; // SET the normal font weight light (originally "normal": changed this so it'll look more crispy) - 08/11/2023
 $font-weight-bold: bold;
 $font-weight-medium: 600;
 $font-weight-base: $font-weight-normal;
 $line-height-base: 1.5;
 $h1-font-size: $font-size-base * 3;
-$h2-font-size: $font-size-base * 2.75;
-$h3-font-size: $font-size-base * 2.5;
-$h4-font-size: $font-size-base * 2;
-$h5-font-size: $font-size-base * 1.75;
-$h6-font-size: $font-size-base * 1.5;
+$h2-font-size: $font-size-base * 2; // DECREASED H2 font-size (improves contrasting of headings) - 08/14/2023
+$h3-font-size: $font-size-base * 1.75; // DECREASED H3 font-size (...) - 08/14/2023
+$h4-font-size: $font-size-base * 1.5; // DECREASED H4 font-size (...) - 08/14/2023
+$h5-font-size: $font-size-base * 1.25; // DECREASED H5 font-size (...) - 08/14/2023
+$h6-font-size: $font-size-base * 1; // DECREASED H6 font-size (...) - 08/14/2023
+
 // Override
-$headings-font-family:  $font-family-sans-serif-alternate !default;
+$headings-font-family: $font-family-hamilton-theme !default;
 $btn-font-weight: $font-weight-normal !default;
 $btn-font-family: $font-family-sans-serif;
 $navbar-brand-font-size: $font-size-base * 2.5;
@@ -41,11 +48,11 @@ $navbar-brand-font-size-mobile: $font-size-base * 1.5;
 $nav-link-font-weight: $font-weight-normal;
 
 .navbar-brand {
-  font-family: $font-family-serif;
+  font-family: $font-family-hamilton-theme; // CHANGED navigation brand font to use Hamilton's Mercury font text - 08/15/2023
 }
 #navbar-main {
   h1,h2,h3,h4,h5 {
-    font-family: $font-family-sans-serif;
+    font-family: $font-family-hamilton-theme; // CHANGED headings font to use Hamilton's font text - 08/11/2023
   }
 }
 dt {
@@ -71,7 +78,7 @@ a {
 h1,h2,h3,h4,h5 {
   &.fas > a {
     font-family: $headings-font-family;
-    font-weight: 500;
+    font-weight: 600; // ADJUSTED heading font weight - 08/10/2023
     line-height: 1.2;
   }
   a {
@@ -88,9 +95,26 @@ h1,h2,h3,h4,h5 {
 .view-content {
   h2 {
     font-size: $h2-font-size * 0.7;
+    // BOLDEST font weight
+    // the top-most heading should be boldest since it should be of most importance - 08/10/2023
+    font-weight: 700;
+
+    // It'll need a little more space on the top to better separate itself from other content - 08/11/2023
+    padding-top: 25pt;
   }
   h3 {
     font-size: $h3-font-size * 0.7;
+    // BOLDER font weight
+    // a less important heading (but still is important), but this time with additional indent to give a sense of scope - 08/10/2023
+    font-weight: 600;
+    padding-left: $h3-text-indent;
+    padding-top: 15pt;
+  }
+  h3 + p {
+    // a paragraph with h3 indent to give it a sense of scope... - 08/10/2023
+    padding-left: $h3-text-indent;
+    font-size: $font-size-sm;
+    line-height: 1.5;
   }
   h4 {
     font-size: $h4-font-size * 0.7;

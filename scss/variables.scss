@@ -1,13 +1,20 @@
 /* VARIABLES */
 
+/* Hamilton Colors */
+$hamilton-blue: #002f86; //#00205b
+$hamilton-blue-opaque: rgba(0,47,134,1.0); // USEFUL for linear gradients...
+$hamilton-blue-transparent: rgba(0,47,134,0.0); //... thus fades away into nothingness (how poetic of me)!
+$hamilton-white: #ffffff;
+$hamilton-light: #b0defc;
+
 // colors
-$primary-shade: rgb(0, 47, 134);
-$primary-light: lighten($primary-shade, 42%);
-$primary-dark: darken($primary-shade, 12%);
-$accent-shade: #363436;
+$primary-shade: $hamilton-light; // USE the hamilton blue - 08/11/2023
+$primary-light: $hamilton-light; // USE the SAME hamilton blue (will change later) - 08/11/2023
+$primary-dark: darken($hamilton-light, 12%); // DARKEN that blue - 08/11/2023
+$accent-shade: $hamilton-blue;
 $accent-light: lighten($accent-shade, 37%);
-$accent-dark: rgb(110, 103, 127);
-$tertiary-shade: #00205b;
+$accent-dark: darken($accent-shade, 12%);
+$tertiary-shade: #002f86;
 
 $quaternary-shade: rgb(176, 222, 252);
 // Reassign color vars to semantic color scheme
@@ -21,6 +28,8 @@ $gray-400: #424242;
 $gray-600: #363436;
 $gray-800: #111111;
 
+/* Temporary fix for */
+$table-border-width: 2px;
 
 $theme-colors: (primary: $primary-shade, secondary: $accent-shade, tertiary: $tertiary-shade, quaternary:$quaternary-shade, success:$green, info: $cyan, warning: $yellow, danger: $red, light: $gray-100, dark: $gray-800);
 $brand-primary: $accent-shade;
@@ -52,8 +61,9 @@ $headings-color: $gray-800;
 $btn-white-space: nowrap;
 
   // Buttons
-$border-radius: 0 !default;
+$border-radius: 4px !default;
 $input-btn-padding-y: 0.5rem !default;
+$hamilton-border-input-radius: 5px !default; //HAMILTON defined
 
 /* Carousel */
 $carousel-indicator-width: 80%;
@@ -68,7 +78,7 @@ $carousel-indicator-transition: opacity 0.5s, margin-right 0.5s;
   --bs-btn-hover-bg: #{darken($primary-shade, 10%)};
   --bs-secondary-rgb: #{$brand-primary};
   --bs-link-color: #{$link-color};
-  --bs-btn-bg: #{$primary-shade};
+  --bs-btn-bg: #{$hamilton-blue};
   .nav-pills {
     --bs-nav-pills-link-active-color: #{$quaternary-shade};
     --bs-nav-pills-link-active-bg: none;
@@ -110,7 +120,7 @@ $carousel-indicator-transition: opacity 0.5s, margin-right 0.5s;
 }
 
 /* header nav overrides */
-$navbar-dark-bg-active-color: $primary-shade !default;
+$navbar-dark-bg-active-color: $hamilton-white !default;
 $navbar-dark-hover-color: $link-color !default;
 $navbar-padding-y: 0;
 

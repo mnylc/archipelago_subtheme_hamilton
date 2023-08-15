@@ -13,6 +13,33 @@ body {
   background: $white;
 }
 
+/* HAMILTON STYLES
+-------------------------------------------------*/
+
+// ADDED input box border radius (to give it a more professional, cleaner look
+input {
+  border-radius: $hamilton-border-input-radius !important;
+}
+
+// MAKE the blue header thicker
+#navbar-top {
+  height: 100pt;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.75);
+}
+
+.highlighted {
+  background: linear-gradient(to bottom, $hamilton-blue-opaque, $hamilton-blue-transparent);
+}
+
+#header {
+  border-top: 36px solid $hamilton-light;
+}
+
+// HIDE away redundant page title from content body (there's already one above the breadcrumbs region
+.node__title {
+  display: none;
+}
+
 /* COLORS
 --------------------------------------------------*/
 .bg-inverse {
@@ -367,14 +394,14 @@ body {
 :root {
 
   #navbar-main {
-    min-height: 8rem;
+    min-height: 5rem;
     padding-top: calc(var(--bs-gutter-y) * 0.5);
     padding-bottom: calc(var(--bs-gutter-y) * 0.5);
     border-bottom: 1px solid #{$primary-light};
     background-repeat: repeat-y;
     background-position-x: 130%;
     .not-to-be-collapsed {
-      min-height: 8rem;
+      min-height: 5rem;
       height: max-content;
     }
   }
