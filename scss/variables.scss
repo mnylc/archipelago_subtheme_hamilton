@@ -20,7 +20,11 @@ $gray-100: #d7dbde;
 $gray-400: #424242;
 $gray-600: #363436;
 $gray-800: #111111;
-
+/* Bootstrap Barrio's SCSS 5.02 base theme introduced a bug, let's try to override to make gulp happy
+@see https://www.drupal.org/project/bootstrap_sass/issues/3365211
+@todo remove once the above issue is solved
+ */
+$table-border-width : 1px;
 
 $theme-colors: (primary: $primary-shade, secondary: $accent-shade, tertiary: $tertiary-shade, quaternary:$quaternary-shade, success:$green, info: $cyan, warning: $yellow, danger: $red, light: $gray-100, dark: $gray-800);
 $brand-primary: $accent-shade;
