@@ -4,9 +4,9 @@
 $primary-shade: rgb(0, 47, 134);
 $primary-light: lighten($primary-shade, 42%);
 $primary-dark: darken($primary-shade, 12%);
-$accent-shade: #363436;
+$accent-shade: rgb(76, 222, 252);
 $accent-light: lighten($accent-shade, 37%);
-$accent-dark: rgb(110, 103, 127);
+$accent-dark: rgba(20, 32, 54, 0.8);
 $tertiary-shade: #00205b;
 
 $quaternary-shade: rgb(176, 222, 252);
@@ -16,7 +16,7 @@ $yellow: #ffc107;
 $green: #28a745;
 $cyan: #17a2b8;
 $white: #fff;
-$gray-100: #d7dbde;
+$gray-100: #d0d0d0;
 $gray-400: #424242;
 $gray-600: #363436;
 $gray-800: #111111;
@@ -56,8 +56,10 @@ $headings-color: $gray-800;
 $btn-white-space: nowrap;
 
   // Buttons
-$border-radius: 0 !default;
-$input-btn-padding-y: 0.5rem !default;
+$border-radius: 31.25rem !default;
+
+$input-btn-padding-y: 0.625rem !default;
+$input-btn-padding-x:  1.875rem !default;
 
 /* Carousel */
 $carousel-indicator-width: 80%;

@@ -246,7 +246,7 @@ body {
     font-size: $navbar-brand-font-size;
   }
   input[name="search_api_fulltext"] {
-    max-width: 10rem;
+    max-width: 16rem;
   }
   .nav-item.menu-item--expanded.dropdown {
     z-index: 9999;
@@ -693,9 +693,7 @@ body {
       #header .views-exposed-form label {
         display: none;
       }
-      .form-control, .form-select {
-        border: 1px solid #{$primary-light};
-      }
+
       .advanced-search-box {
         .views-exposed-form {
           .form-row {
@@ -965,9 +963,9 @@ body {
       display: flex;
       .form-item-sort-bef-combine {
         .form-select.bef-links {
-          padding: 0;
+          /* padding: 0;
           background: none;
-          border: none;
+          border: none; */
         }
 
         ul {
