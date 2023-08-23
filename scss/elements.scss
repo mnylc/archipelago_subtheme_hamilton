@@ -13,11 +13,10 @@ textarea {
   border: 1px solid #{$gray-100};
   /* TODO rePLACE WITH THEME COLOR */
   color: #{$accent-dark};
-  line-height: 1;
+  line-height: 1.5rem;
   padding: 0.625rem 1.875rem;
   background-color: #{$white};
   transition: border .25s, background-color 0.5s, color .25s;
-
 }
 
 .form-type-select {
