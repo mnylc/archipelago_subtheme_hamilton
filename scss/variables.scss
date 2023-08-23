@@ -27,8 +27,8 @@ $gray-800: #111111;
 $table-border-width : 1px;
 
 $theme-colors: (primary: $primary-shade, secondary: $accent-shade, tertiary: $tertiary-shade, quaternary:$quaternary-shade, success:$green, info: $cyan, warning: $yellow, danger: $red, light: $gray-100, dark: $gray-800);
-$brand-primary: $accent-shade;
-$brand-inverse: $primary-shade;
+$brand-primary: $white;
+$brand-inverse: $quaternary-shade;
 
 $body-bg: $white;
 $body-color: $gray-800;
@@ -37,9 +37,9 @@ $inverse-color: $white;
 // Links
 //
 // Style anchor elements.
-$link-color: $accent-shade;
+$link-color: $primary-shade;
 $link-decoration: none;
-$link-hover-color: $accent-shade;
+$link-hover-color: $primary-shade;
 $link-hover-decoration: underline;
 // Comments
 $comment-spacer-x: 1.25em;
@@ -53,9 +53,10 @@ $breadcrumb-divider: quote(">");
 
 // Headings means H1-H6
 $headings-color: $gray-800;
-$btn-white-space: nowrap;
 
-  // Buttons
+
+//Input and buttons
+$btn-white-space: nowrap;
 $border-radius: 0!default;
 
 $input-border-radius:                   31.25rem !default;
@@ -65,6 +66,13 @@ $input-border-radius-lg:               $input-border-radius;
 $btn-border-radius:          $input-border-radius !default;
 $btn-border-radius-sm:       $input-border-radius-sm !default;
 $btn-border-radius-lg:       $input-border-radius-lg !default;
+
+
+// Pagination
+$pagination-border-radius: 31.25rem !default;
+$pagination-hover-bg: map-get($theme-colors,"primary");
+$pagination-color: $body-color;
+$pagination-hover-color: $inverse-color;
 
 $input-btn-padding-y: 0.625rem !default;
 $input-btn-padding-x:  1.875rem !default;

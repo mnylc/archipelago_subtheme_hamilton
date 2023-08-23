@@ -5,13 +5,13 @@
 //@import url("https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900,900italic");
 //@import url("https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900");
 //
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
-
+//@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+/* From Hamilton.edu */
+@import url('https://cloud.typography.com/6265694/7953232/css/fonts.css');
 // Font, line-height, and color for body text, headings, and more.
-$font-family-sans-serif:  'Source Sans Pro', sans-serif;
-$font-family-monospace:   SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$font-family-serif: Georgia, serif !default;
-$font-family-sans-serif-alternate: 'Oswald', sans-serif;
+$font-family-sans-serif:  "Ideal Sans SSm A", "Ideal Sans SSm B", "Ideal Sans", sans-serif;
+$font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-serif: "Mercury Text G1 A", "Mercury Text G1 B", "Mercury", serif;
 $font-family-base: $font-family-sans-serif;
 
 
@@ -32,7 +32,7 @@ $h4-font-size: $font-size-base * 2;
 $h5-font-size: $font-size-base * 1.75;
 $h6-font-size: $font-size-base * 1.5;
 // Override
-$headings-font-family:  $font-family-sans-serif-alternate !default;
+$headings-font-family:  $font-family-sans-serif !default;
 $btn-font-weight: $font-weight-normal !default;
 $btn-font-family: $font-family-sans-serif;
 $navbar-brand-font-size: $font-size-base * 2.5;
@@ -49,7 +49,7 @@ $nav-link-font-weight: $font-weight-normal;
   }
 }
 dt {
-  font-family: $font-family-sans-serif-alternate;
+  font-family: $font-family-sans-serif;
   font-size: $font-size-base * 1.2;
 }
 .content {
