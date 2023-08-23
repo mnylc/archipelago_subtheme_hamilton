@@ -167,8 +167,8 @@ body {
 /* Primary Button */
 .btn-primary:hover {
   @include button-variant($primary-shade, $primary-shade);
-  background-color: shade-color($primary-shade, $btn-hover-bg-shade-amount);
-  border-color: shade-color($primary-shade, $btn-hover-bg-shade-amount);
+  background-color: shade-color($accent-shade, $btn-hover-bg-shade-amount);
+  border-color: transparent;
 }
 
 /* hide Form labels for exposed form Elements */
@@ -365,8 +365,12 @@ body {
 }
 
 :root {
-
   #navbar-main {
+    &.bg-primary {
+      --bs-heading-color: #{$white};
+      --bs-link-color-rgb: 255, 255, 255;
+      --bs-link-hover-color-rgb: red(#{$quaternary-shade}), green(#{$quaternary-shade}), blue(#{$quaternary-shade});
+    }
     min-height: 8rem;
     padding-top: calc(var(--bs-gutter-y) * 0.5);
     padding-bottom: calc(var(--bs-gutter-y) * 0.5);
@@ -760,18 +764,6 @@ body {
                 pointer-events: none;
               }
             }
-            .form-actions {
-                display: none;
-              &:focus-visible {
-                display:revert;
-              }
-              &:focus {
-                display:revert;
-              }
-              &:hover {
-                display:revert;
-              }
-            }
           }
         }
 
@@ -947,12 +939,6 @@ body {
       }
     }
 
-    .pagination {
-      --bs-pagination-active-bg: var(--bs-secondary);
-      --bs-pagination-active-border-color: var(--bs-secondary);
-      --bs-pagination-active-color: var(--bs-body-bg);
-    }
-
     /* special class added via the UI for the advanced search */
 
     /* Exposed form overrides based on bef */
@@ -1076,7 +1062,7 @@ body {
         }
       }
       .carousel-indicators {
-        font-family: $font-family-sans-serif-alternate;
+        font-family: $font-family-sans-serif;
         position: absolute;
         height: auto;
         right: 0;
@@ -1173,7 +1159,7 @@ body {
         }
       }
       .carousel-indicators {
-        font-family: $font-family-sans-serif-alternate;
+        font-family: $font-family-sans-serif;
         position: absolute;
         height: auto;
         left: 0;
