@@ -46,8 +46,11 @@
  * - page.breadcrumb_with_sidebar: Breadcrumb area over the main content with sidebar
  * - page.content: The main content of the current page.
  * - page.content_second: The main content of the current page.
- * - page.sidebar_first: Items for the first sidebar.
- * - page.sidebar_second: Items for the second sidebar.
+ * - page.sidebar_first: Items for the left (first) sidebar.
+ * - page.sidebar_second: Items for the right (second) sidebar.
+ * - page.content_bottom:  Content Bottom with sidebars.
+ * - page.sidebar_second_bottom: Sidebad left (first) for Content Bottom
+ * - page.sidebar_second_bottom: Sidebad right (second) for Content Bottom
  * - page.featured_bottom_first: Items for the first featured bottom region.
  * - page.featured_bottom_second: Items for the second featured bottom region.
  * - page.featured_bottom_third: Items for the third featured bottom region.
@@ -201,6 +204,29 @@
               <div{{ sidebar_second_attributes }}>
                 <aside class="section" role="complementary">
                   {{ page.sidebar_second }}
+                </aside>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <div id="content_bottom_container" class="{{ container }}">
+          <div class="row row-offcanvas row-offcanvas-left clearfix">
+            <div id="content_bottom" class="col" role="complementary">
+              <section class="section">
+                {{ page.content_bottom }}
+              </section>
+            </div>
+            {% if page.sidebar_first_bottom %}
+              <div{{ sidebar_first_attributes.removeAttribute('id').setAttribute('id', 'sidebar-first-bottom') }}>
+                <aside class="section" role="complementary">
+                  {{ page.sidebar_first_bottom }}
+                </aside>
+              </div>
+            {% endif %}
+            {% if page.sidebar_second_bottom %}
+              <div{{ sidebar_second_attributes.removeAttribute('id').setAttribute('id', 'sidebar-second-bottom') }}>
+                <aside class="section" role="complementary">
+                  {{ page.sidebar_second_bottom }}
                 </aside>
               </div>
             {% endif %}
