@@ -40,7 +40,7 @@ function archipelago_subtheme_hamilton_form_system_theme_settings_alter(&$form, 
  */
 function archipelago_subtheme_hamilton_preprocess_breadcrumb(&$variables){
   // Remove 'Home' from breadcrumb trail.
-  if (count($variables['breadcrumb'])) {
+  /* if (count($variables['breadcrumb'])) {
     array_shift($variables['breadcrumb']);
-  }
+  } */
 }

@@ -373,7 +373,10 @@ body {
     &.bg-primary {
       --bs-heading-color: #{$white};
       --bs-link-color-rgb: 255, 255, 255;
-      --bs-link-hover-color-rgb: red(#{$quaternary-shade}), green(#{$quaternary-shade}), blue(#{$quaternary-shade});
+      --bs-link-hover-color-rgb: #{red($quaternary-shade), green($quaternary-shade), blue($quaternary-shade)};
+      a:hover {
+        text-decoration: none;
+      }
     }
     .page-header {
       align-self: center;
@@ -385,7 +388,7 @@ body {
     background-repeat: repeat-y;
     background-position-x: 130%;
     .not-to-be-collapsed {
-      min-height: 8rem;
+      min-height: 12rem;
       height: max-content;
     }
   }
@@ -498,7 +501,7 @@ body {
   .archipelago-hamilton-theme {
 
     .breadcrumb {
-      .breadcrumb-item + .breadcrumb-item::before {
+      /*.breadcrumb-item + .breadcrumb-item::before {
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         -moz-osx-font-smoothing: grayscale;
@@ -507,9 +510,9 @@ body {
         font-style: normal;
         font-variant: normal;
         text-rendering: auto;
-      }
-      --bs-breadcrumb-divider: "\f101";
-      --bs-breadcrumb-divider-color: #{$primary-light};
+      }*/
+      --bs-breadcrumb-divider: ">";
+      --bs-breadcrumb-divider-color: #{$white};
     }
     #navbar-top {
       padding: 0 0.5rem;
@@ -546,6 +549,7 @@ body {
       opacity: 1;
       max-height: 2.25rem;
       height: 2.25rem;
+      --bs-border-radius: 0.75rem;
       &:first-of-type {
         border-bottom-left-radius: var(--bs-border-radius);
         border-top-left-radius: var(--bs-border-radius);
@@ -581,7 +585,7 @@ body {
         font-weight: normal !important;
         font-variant: normal;
         text-transform: none;
-        line-height: 1;
+        line-height: 1.1;
         vertical-align: -.125em;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -598,14 +602,14 @@ body {
         font-weight: normal !important;
         font-variant: normal;
         text-transform: none;
-        line-height: 1;
+        line-height: 1.1;
         vertical-align: -.125em;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
 
       flex-shrink: 0;
-      border: none;
+      border: 1px #{$gray-100} solid;
       height: 100%;
       min-height: 0;
       display: flex;
@@ -621,6 +625,7 @@ body {
       }
       &.is-active {
         background-color: #{$quaternary-shade};
+        border-color: transparent;
       }
     }
     // Make the links hidden if inside the view header, this way we should see
@@ -779,7 +784,8 @@ body {
                 background-repeat: no-repeat;
                 background-size: contain;
                 position: absolute;
-                padding: $input-padding-y $input-padding-x;
+                color: #{$gray-100};
+                padding: $input-padding-y 0.5rem;
                 pointer-events: none;
               }
             }
@@ -877,6 +883,37 @@ body {
       font-size: $h4-font-size;
     }
     .sidebar .block {
+      position: relative;
+      &:first-of-type {
+        &:before {
+          position: absolute;
+          top: -1rem;
+          right: 0;
+          height: 1px;
+          border-top: 1px #{$accent-alternate-shade} solid;
+          content: "";
+          width: 100%;
+          display: block;
+          pointer-events: none;
+          transform: translateY(-10%);
+        }
+      }
+      &:last-of-type {
+        &:after {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          height: 1px;
+          border-top: 1px #{$accent-alternate-shade} solid;
+          content: "";
+          width: 100%;
+          display: block;
+          pointer-events: none;
+          transform: translateY(10%);
+        }
+      }
+
+
       h1 {
         font-size: 2rem;
       }
@@ -892,9 +929,9 @@ body {
       --bs-accordion-active-bg: var(--bs-primary);
       --bs-accordion-color: #{$inverse-color};
       /* See https://yoksel.github.io/url-encoder/ so good */
-      --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-arrow-up-square-fill' viewBox='0 0 16 16'%3E%3Cpath d='M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z'/%3E%3C/svg%3E");
-      --bs-accordion-btn-icon-transform: scale(1.5);
-      --bs-accordion-btn-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236E677F' class='bi bi-arrow-down-square' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z'/%3E%3C/svg%3E");
+      --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='-2 -2 18 18' style='color: white;'%3E%3Cpath fill='currentColor' fill-rule='evenodd' d='M8.5,5.5 L14,5.5 L14,8.5 L0,8.5 L0,5.5 Z'/%3E%3C/svg%3E");
+      --bs-accordion-btn-icon-transform: scale(1.2);
+      --bs-accordion-btn-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='-2 -2 18 18' style='color: rgb(0, 47, 134);'%3E%3Cpolygon fill='currentColor' points='6 6 6 0 8 0 8 6 14 6 14 8 8 8 8 14 6 14 6 8 0 8 0 6'/%3E%3C/svg%3E%0A");
       --bs-accordion-border-radius: 0;
 
       &.highlighted-accordion-horizontal {
@@ -1241,22 +1278,36 @@ body {
     margin-bottom: 0.875rem;
   }
 }
-
-/* Extras */
 .back-to-top {
-  display: block;
-  width: 5rem;
-  height: 4rem;
-  position: fixed;
-  right: 3%;
-  bottom: 3%;
-  z-index: 1234;
-  background-color: rgba(0,0,0,0.5);
-  color: white;
-  padding-top: 0.5em;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
+  transition: height .25s, background-color .5s, bottom .25s;
+}
+body.scrolled {
+  /* Extras */
+  .back-to-top {
+    display: block;
+    width: 4rem;
+    height: 3rem;
+    border-top-left-radius: var(--bs-border-radius);
+    border-top-right-radius: var(--bs-border-radius);
+    position: fixed;
+    right: 5%;
+    bottom: 2%;
+    z-index: 1234;
+    background-color: #{$quaternary-shade-rgba};
+    color: white;
+    padding-top: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+  }
+}
+body:not(.scrolled) {
+  .back-to-top {
+    height: 1rem;
+    background-color: rgba(0,0,0,0);
+    bottom: -3%;
+  }
 }
 
 /* Hamilton decoration */

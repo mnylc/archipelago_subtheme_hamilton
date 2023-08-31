@@ -5,11 +5,12 @@ $primary-shade: rgb(0, 47, 134);
 $primary-light: lighten($primary-shade, 42%);
 $primary-dark: darken($primary-shade, 12%);
 $accent-shade: rgb(76, 222, 252);
-$accent-light: lighten($accent-shade, 37%);
+$accent-light: lighten($accent-shade, 25%);
 $accent-dark: rgba(20, 32, 54, 0.8);
 $tertiary-shade: #00205b;
-
+$accent-alternate-shade: #d6ba8b;
 $quaternary-shade: rgb(176, 222, 252);
+$quaternary-shade-rgba: rgba(176, 222, 252, 0.5);
 // Reassign color vars to semantic color scheme
 $red: #ab2328;
 $yellow: #ffc107;
@@ -57,7 +58,7 @@ $headings-color: $gray-800;
 
 //Input and buttons
 $btn-white-space: nowrap;
-$border-radius: 0!default;
+$border-radius: 0.75rem!default;
 
 $input-border-radius:                   31.25rem !default;
 $input-border-radius-sm:                $input-border-radius;
