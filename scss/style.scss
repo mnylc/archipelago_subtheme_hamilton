@@ -142,8 +142,11 @@ body {
   color: $primary-shade;
 }
 
-.site-name-slogan a {
-  text-decoration: none;
+.site-name-slogan  {
+  color: white;
+  font-size: 2rem;
+  border-left: 1px solid rgba(208, 208, 208, .25);
+  padding-left: var(--bs-navbar-brand-margin-end);
 }
 
 .card-group img {
@@ -160,7 +163,7 @@ body {
   width: 100%;
 }
 
-.slick>div {
+.slick > div {
   margin: 0 15px;
 }
 
@@ -506,7 +509,7 @@ body {
     }
     #navbar-top {
       padding: 0 0.5rem;
-      min-height: 55px;
+      min-height: 120px;
     }
 
     .highlighted {
@@ -554,20 +557,18 @@ body {
       }
       &.views-display-link-grid {
         color:transparent;
-        max-width: 3rem;
+        max-width: 2.5rem;
         overflow: hidden;
       }
       &.views-display-link-page_1 {
         color:transparent;
-        max-width: 3rem;
+        max-width: 2.5rem;
         overflow: hidden;
       }
 
       &.views-display-link-grid::before {
         color: var(--bs-btn-bg);
         position: relative;
-        left: -0.5rem;
-        top: 0.25rem;
         content: "\F3F5";
         font-size: 1.5rem;
         display: inline-block;
@@ -585,8 +586,6 @@ body {
       &.views-display-link-page_1::before {
         color: var(--bs-btn-bg);
         position: relative;
-        left: -0.5rem;
-        top: 0.25rem;
         content: "\F479";
         font-size: 1.5rem;
         display: inline-block;
@@ -690,8 +689,10 @@ body {
 
       .navbar-brand {
         display:flex;
-        a {
-          align-self: center;
+        flex-direction: column;
+        align-self: center;
+        span {
+          font-size: 1.5rem;
         }
       }
       #header .views-exposed-form label {
@@ -846,6 +847,11 @@ body {
       margin: 0 0 1rem 0;
       width: fit-content;
     }
+
+    .list-group {
+      --bs-list-group-border-width: 0;
+    }
+
 
     --bs-nav-pills-link-active-bg: var(--bs-primary);
     .facet-summary-item--count {
@@ -1221,8 +1227,8 @@ body {
 /* Extras */
 .back-to-top {
   display: block;
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 4rem;
   position: fixed;
   right: 3%;
   bottom: 3%;
@@ -1234,6 +1240,40 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Hamilton decoration */
+
+.explore_links_decoration {
+
+  &:before {
+  width: 14px;
+  width: 0.875rem;
+  height: 1px;
+  height: 0.0625rem;
+  top: -3px;
+  left: -5px;
+  background-color: #d6ba8b;
+  box-shadow: 0 3px 0 #d6ba8b;
+  transform: rotate(27deg);
+  position: absolute;
+  content: "";
+  display: block;
+  }
+ &:after {
+   width: 7px;
+   width: 0.4375rem;
+   height: 7px;
+   height: 0.4375rem;
+   bottom: -10px;
+   left: -3px;
+   border-radius: 50%;
+   position: absolute;
+   background-color: #d6ba8b;
+   content: "";
+   display: block;
+ }
+}
+
 
 
 /* Front page highlights */
