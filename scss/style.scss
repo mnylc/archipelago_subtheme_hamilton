@@ -144,9 +144,10 @@ body {
 
 .site-name-slogan  {
   color: white;
-  font-size: 2rem;
   border-left: 1px solid rgba(208, 208, 208, .25);
   padding-left: var(--bs-navbar-brand-margin-end);
+  //align-items: flex-end;
+  align-items: center;
 }
 
 .card-group img {
@@ -374,6 +375,9 @@ body {
       --bs-link-color-rgb: 255, 255, 255;
       --bs-link-hover-color-rgb: red(#{$quaternary-shade}), green(#{$quaternary-shade}), blue(#{$quaternary-shade});
     }
+    .page-header {
+      align-self: center;
+    }
     min-height: 8rem;
     padding-top: calc(var(--bs-gutter-y) * 0.5);
     padding-bottom: calc(var(--bs-gutter-y) * 0.5);
@@ -600,12 +604,6 @@ body {
         -moz-osx-font-smoothing: grayscale;
       }
 
-      &.views-display-link-grid {
-      }
-
-      &.views-display-link-page_1 {
-      }
-
       flex-shrink: 0;
       border: none;
       height: 100%;
@@ -634,6 +632,33 @@ body {
         opacity: 0;
       }
     }
+
+    /* Style Branding differently on Front page than internally */
+    &.path-frontpage {
+      .navbar-brand {
+        display:flex;
+        flex-direction: column;
+        align-self: center;
+        span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    &:not(.path-frontpage) {
+      .navbar-brand {
+        display:flex;
+        flex-direction: column;
+        align-self: center;
+        span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+
+
+
+
 
     #page {
       /* Hides Labels from Exposed View Elements in the header
@@ -687,14 +712,7 @@ body {
       }
       /* EM D Custom cap P class */
 
-      .navbar-brand {
-        display:flex;
-        flex-direction: column;
-        align-self: center;
-        span {
-          font-size: 1.5rem;
-        }
-      }
+
       #header .views-exposed-form label {
         display: none;
       }
