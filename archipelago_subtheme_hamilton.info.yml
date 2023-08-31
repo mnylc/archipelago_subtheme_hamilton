@@ -5,7 +5,7 @@ description: 'SASS starter kit for a Bootstrap Barrio SubTheme.'
 core: 8.x
 core_version_requirement: ^8 || ^9 || ^10
 base theme: bootstrap_barrio
-logo: 'images/logo.png'
+logo: 'logo.svg'
 
 libraries:
   - archipelago_subtheme_hamilton/global-styling
