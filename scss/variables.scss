@@ -99,7 +99,7 @@ $carousel-indicator-transition: opacity 0.5s, margin-right 0.5s;
     --bs-navbar-toggler-border-color: transparent !important;
   }
   .breadcrumb {
-    --bs-breadcrumb-margin-bottom: 0;
+    --bs-breadcrumb-margin-bottom: 1rem;
   }
   .btn-primary:active, .btn-primary:focus:active {
     --bs-btn-color: #{$link-color};
@@ -137,8 +137,8 @@ $carousel-indicator-transition: opacity 0.5s, margin-right 0.5s;
 }
 
 /* header nav overrides */
-$navbar-dark-bg-active-color: $primary-shade !default;
-$navbar-dark-hover-color: $link-color !default;
+$navbar-dark-bg-active-color: $quaternary-shade !default;
+$navbar-dark-hover-color: $white !default;
 $navbar-padding-y: 0;
 
 
