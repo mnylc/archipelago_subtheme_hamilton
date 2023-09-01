@@ -264,11 +264,10 @@ body {
   #navbar-main {
     .to-be-collapsed {
       /* Avoid Flex Jumpin' around */
-      height: 3.75rem;
+      height: 4.75rem;
       border-top: 1px solid #{$primary-light};
       /* Avoid flex having extra space and messing the white bar on large sizes */
       flex-basis: 100%;
-
       .nav-item {
         position: relative;
       }
@@ -308,7 +307,7 @@ body {
     flex-direction: row;
     height: 87px;
     align-items: center;
-    column-gap: map-get($spacers, 4); // Same as px-4
+    column-gap: map-get($spacers, 1); // Same as px-4
   }
   #navbar-main .views-exposed-form form {
     display: flex;
@@ -1027,6 +1026,9 @@ body {
           width:100%;
           padding: 0.5rem;
           text-decoration: none;
+          --bs-navbar-nav-link-padding-x: 1rem;
+          padding-right: var(--bs-navbar-nav-link-padding-x);
+          padding-left: var(--bs-navbar-nav-link-padding-x);
         }
       }
     }
