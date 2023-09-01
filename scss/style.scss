@@ -628,9 +628,20 @@ body {
         border-color: transparent;
       }
     }
-    // Make the links hidden if inside the view header, this way we should see
-    // maybe less of a jump when JS moves it?
+
+    #block-archipelago-subtheme-hamilton-content {
+      .view {
+        position: relative;
+        overflow: visible;
+        .view-header {
+          position: absolute;
+          top: -6.25rem;
+        }
+      }
+    }
+
     .view-header {
+      padding-bottom: 1rem;
       a.views-display-link {
         visibility: hidden;
         @extend .visually-hidden;
@@ -839,12 +850,13 @@ body {
       padding-bottom: 0;
       .view-content {
         margin-bottom: map-get($spacers, 4);
-        &.row > div:not(:last-child) {
+        .row > div:not(:last-child) .views-field-search-api-rendered-item {
           margin-bottom: map-get($spacers, 5);
-          border-bottom-width: var(--bs-border-width);
-          border-bottom-style: none;
+          border-bottom-width: 2px;
+          border-bottom-style: solid;
+          border-color: #{$quaternary-shade};
           /* exception not used anywhere else */
-          padding-bottom: map-get($spacers, 4);
+          padding-bottom: map-get($spacers, 3);
         }
       }
     }
@@ -885,6 +897,7 @@ body {
     .sidebar .block {
       position: relative;
       &:first-of-type {
+        margin-top: 1rem;
         &:before {
           position: absolute;
           top: -1rem;
