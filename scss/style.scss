@@ -628,6 +628,19 @@ body {
       }
     }
 
+    /* Nav tabs are grey by default */
+    nav.tabs ul {
+      background: white;
+      .nav-item.active a {
+        background: white;;
+      }
+      .nav-item:not(.active) a {
+        background: #{$gray-100};
+        border-color: white;
+      }
+    }
+
+
     #block-archipelago-subtheme-hamilton-content {
       .view {
         position: relative;
@@ -1392,7 +1405,6 @@ body:not(.scrolled) {
    display: block;
  }
 }
-
 
 
 /* Front page highlights */
