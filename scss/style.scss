@@ -639,6 +639,12 @@ body {
         border-color: white;
       }
     }
+    /* Margin bottom to any Node rendered entity */
+    div.content div[data-history-node-id]{
+      div.field {
+        margin-bottom: 1rem;
+      }
+    }
 
 
     #block-archipelago-subtheme-hamilton-content {
