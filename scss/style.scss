@@ -869,6 +869,11 @@ body {
     .navbar-dark {
       --bs-navbar-brand-color: #{$quaternary-shade};
       --bs-navbar-brand-hover-color: #{$quaternary-shade};
+      transition: background-color 0.5s;
+      &.bg-dark.affix {
+        --bs-dark-rgb: #{red($primary-shade)},  #{green($primary-shade)} , #{blue($primary-shade)}
+
+      }
     }
 
     dt {
@@ -991,6 +996,12 @@ body {
            color: #{$navbar-dark-bg-active-color};
           }
         }
+      }
+      &.bg-dark.affix {
+        ul.dropdown-menu {
+          --bs-dropdown-bg: #{$primary-shade};
+        }
+
       }
     }
 
@@ -1337,9 +1348,15 @@ body.scrolled {
 }
 body:not(.scrolled) {
   .back-to-top {
-    height: 1rem;
+    position: fixed;
+    height: 3rem;
+    width: 4rem;
     background-color: rgba(0,0,0,0);
+    color: rgba(0,0,0,0);
     bottom: -3%;
+    right: 5%;
+    padding-top: 0.5em;
+    text-align: center;
   }
 }
 
