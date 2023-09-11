@@ -889,9 +889,8 @@ body {
       --bs-navbar-brand-color: #{$quaternary-shade};
       --bs-navbar-brand-hover-color: #{$quaternary-shade};
       transition: background-color 0.5s;
-      &.bg-dark.affix {
+      &.bg-dark.intersected {
         --bs-dark-rgb: #{red($primary-shade)},  #{green($primary-shade)} , #{blue($primary-shade)}
-
       }
     }
 
@@ -1016,11 +1015,10 @@ body {
           }
         }
       }
-      &.bg-dark.affix {
+      &.bg-dark.intersected {
         ul.dropdown-menu {
           --bs-dropdown-bg: #{$primary-shade};
         }
-
       }
     }
 

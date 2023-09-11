@@ -7,7 +7,7 @@
 
   'use strict';
 
-  Drupal.behaviors.archipelago_subtheme_rpi = {
+  Drupal.behaviors.archipelago_subtheme_hamilton = {
     attach: function (context, settings) {
       if ($(context).is('.view') || context == document) {
         /* Initialize Popovers */
@@ -20,6 +20,36 @@
           $(this).detach().appendTo("#main-breadcrumbs");
         });
       }
+
+      $('#page-wrapper').once('attache_observer')
+        .each(function (index, value) {
+
+            var observer = new IntersectionObserver(function (entries) {
+              const ratio = entries[0].intersectionRatio;
+              console.log(ratio);
+              if (ratio < 0.4) {
+                let $topbar = document.querySelector('#navbar-top');
+                if (!$topbar.classList.contains('intersected')) {
+                  $topbar.classList.add('intersected');
+                }
+              }
+              else if (ratio > 0.6) {
+                let $topbar = document.querySelector('#navbar-top');
+                if ($topbar.classList.contains('intersected')) {
+                  $topbar.classList.remove('intersected');
+                }
+              }
+            },{
+              root: null,
+              rootMargin: '0px 0px',
+              threshold: [...Array(20).keys()].map(x => x / 20)
+            });
+            let $observedElement = document.querySelector("#navbar-main");
+            if ($observedElement) {
+              observer.observe($observedElement)
+            }
+          }
+        );
     }
   }
 })(jQuery, Drupal);
