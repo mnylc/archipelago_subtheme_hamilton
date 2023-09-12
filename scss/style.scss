@@ -21,6 +21,19 @@ input {
   border-radius: $hamilton-border-input-radius !important;
 }
 
+.btn {
+  border-radius: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+button {
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+
 // MAKE the blue header thicker
 #navbar-top {
   height: 100pt;
