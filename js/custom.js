@@ -23,10 +23,8 @@
 
       $('#page-wrapper').once('attache_observer')
         .each(function (index, value) {
-
             var observer = new IntersectionObserver(function (entries) {
               const ratio = entries[0].intersectionRatio;
-              console.log(ratio);
               if (ratio < 0.4) {
                 let $topbar = document.querySelector('#navbar-top');
                 if (!$topbar.classList.contains('intersected')) {

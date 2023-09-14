@@ -881,6 +881,13 @@ body {
   }
 
   .archipelago-hamilton-theme {
+    /* Mirador Multibar Override */
+    .MuiAppBar-root {
+      z-index:1000;
+    }
+
+
+
     .region-top-header {
       padding-top: 0; //calc(var(--bs-gutter-x) * 0.250);
       padding-bottom: 0; //calc(var(--bs-gutter-x) * 0.250);
