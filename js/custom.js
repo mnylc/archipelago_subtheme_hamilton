@@ -19,8 +19,8 @@
         $(context).once('view-header').find('.view-header .views-display-link').each(function () {
           $(this).detach().appendTo("#main-breadcrumbs");
         });
-
-        $('.form-select').each(function(i, e) {
+        // Only act on selects in exposed forms for now.
+        $('.views-exposed-form .form-select').each(function(i, e) {
           if (!($(e).data('convert') == 'no')) {
             $(e).hide().removeClass('form-select');
             let selected = $(e).get(0).selectedIndex;
@@ -63,12 +63,19 @@
               //item.appendChild(link);
               dropdownItems.appendChild(link);
             }
-
-            $(e).find('.dropdown-menu a').click(function (e) {
-              $(e).find('input[type=hidden]').val($(this).data('value')).change();
-              $(e).find('.btn:eq(0)').html($(this).html());
-              e.preventDefault();
+            var linkList = [].slice.call(select.querySelectorAll('.dropdown-menu a'))
+            var dropdownList = linkList.map(function (menuItemLinks) {
+              menuItemLinks.addEventListener('click',function (e) {
+                let hidden = select.querySelector('input[type=hidden]');
+                if (hidden) {
+                  hidden.value = this.dataset.value;
+                  let toggle = select.querySelector('.dropdown-toggle');
+                  toggle.textContent = this.textContent;
+                }
+                e.preventDefault();
+              }, false);
             });
+
             $(e).remove();
           }
         });
