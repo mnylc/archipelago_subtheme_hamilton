@@ -19,6 +19,59 @@
         $(context).once('view-header').find('.view-header .views-display-link').each(function () {
           $(this).detach().appendTo("#main-breadcrumbs");
         });
+
+        $('.form-select').each(function(i, e) {
+          if (!($(e).data('convert') == 'no')) {
+            $(e).hide().removeClass('form-select');
+            let selected = $(e).get(0).selectedIndex;
+            let option = $(e).children('option:eq(' + selected + ')');
+            let current =  option.html();
+            let val = option.data('value');
+            let name = $(e).data('name') || '';
+
+            /* if we have multiple selects i could convert them all to a btn-group? */
+            let el = document.createElement('div')
+            el.classList.add('dropdown');
+            let select = $(e).get(0).parentNode.appendChild(el);
+            let dropdown = document.createElement('button')
+            dropdown.classList.add('btn','btn-secondary','dropdown-toggle');
+            dropdown.type = 'button';
+            /* Came case gets transformed into - so bsToggle becomes bs-toggle */
+            dropdown.dataset.bsToggle = 'dropdown';
+            dropdown.ariaExpanded = 'false';
+            dropdown.textContent = current;
+            let dropdownItems = document.createElement('div');
+            dropdownItems.classList.add('dropdown-menu');
+            let hidden = document.createElement('input');
+            hidden.type = 'hidden';
+            hidden.value = val;
+            hidden.name = name;
+            hidden.id = $(e).attr('id');
+            select.appendChild(dropdown);
+            select.appendChild(dropdownItems);
+            select.appendChild(hidden);
+
+            for (const option of $(e).get(0).options) {
+              // const item = document.createElement('li');
+              // item.classList.add('dropdown-item');
+              const link = document.createElement('a');
+              link.classList.add('dropdown-item');
+              link.dataset.value = option.value;
+              link.textContent = option.label;
+              link.href = '#';
+              link.rel = 'nofollow';
+              //item.appendChild(link);
+              dropdownItems.appendChild(link);
+            }
+
+            $(e).find('.dropdown-menu a').click(function (e) {
+              $(e).find('input[type=hidden]').val($(this).data('value')).change();
+              $(e).find('.btn:eq(0)').html($(this).html());
+              e.preventDefault();
+            });
+            $(e).remove();
+          }
+        });
       }
 
       $('#page-wrapper').once('attache_observer')
