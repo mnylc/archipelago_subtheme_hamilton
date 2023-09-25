@@ -941,7 +941,7 @@ body {
         width: 66%;
       }
     }
-    .secondary-info > div.info {
+    .secondary-info div.info {
         position: relative;
         &:first-of-type {
           margin-top: 1rem;
@@ -972,7 +972,6 @@ body {
             transform: translateY(10%);
           }
         }
-
 
         h1 {
           font-size: 2rem;
