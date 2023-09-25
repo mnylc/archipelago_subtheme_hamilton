@@ -236,6 +236,24 @@ body {
     }
   }
 
+  // Override for Object description dl/dt/dd
+  // for smaller screens
+  .more-info {
+    dl {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    dt {
+      width: 100%;
+    }
+
+    dd {
+      margin-left: 5%;
+      width: fit-content;
+    }
+  }
+
 }
 
 /* overrides down from lg  */
@@ -907,6 +925,7 @@ body {
     dl {
       margin-bottom: 1.5rem;
     }
+    /* Object description */
     .more-info {
       dl {
         display: flex;
@@ -921,6 +940,46 @@ body {
         margin-left: auto;
         width: 66%;
       }
+    }
+    .secondary-info > div.info {
+        position: relative;
+        &:first-of-type {
+          margin-top: 1rem;
+          &:before {
+            position: absolute;
+            top: -1rem;
+            right: 0;
+            height: 1px;
+            border-top: 1px #{$accent-alternate-shade} solid;
+            content: "";
+            width: 100%;
+            display: block;
+            pointer-events: none;
+            transform: translateY(-10%);
+          }
+        }
+        &:last-of-type {
+          &:after {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 1px;
+            border-top: 1px #{$accent-alternate-shade} solid;
+            content: "";
+            width: 100%;
+            display: block;
+            pointer-events: none;
+            transform: translateY(10%);
+          }
+        }
+
+
+        h1 {
+          font-size: 2rem;
+        }
+        border-style: none;
+        padding: 0 0 1rem 0;
+        margin: 0;
     }
 
     div.dropdown {
