@@ -904,8 +904,23 @@ body {
     dt {
       margin-bottom: 0.6rem
     }
-    dd {
+    dl {
       margin-bottom: 1.5rem;
+    }
+    .more-info {
+      dl {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      dt {
+        width: 33%;
+      }
+
+      dd {
+        margin-left: auto;
+        width: 66%;
+      }
     }
 
     div.dropdown {
