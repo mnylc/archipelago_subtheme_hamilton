@@ -29,11 +29,11 @@
           const el = collapseEl.querySelector('.strawberry-leaflet-item.leafletViewer');
           if (el) {
             collapseEl.addEventListener('shown.bs.collapse', function () {
-              el.dispatchEvent(new Event('resize'));
+              window.dispatchEvent(new Event('resize'));
             })
           }
         });
-        
+
 
         // Only act on selects in exposed forms for now.
         $('.views-exposed-form .form-select').each(function(i, e) {
