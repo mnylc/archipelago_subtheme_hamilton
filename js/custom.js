@@ -42,7 +42,7 @@
             let selected = $(e).get(0).selectedIndex;
             let option = $(e).children('option:eq(' + selected + ')');
             let current =  option.html();
-            let val = option.data('value');
+            let val = option.attr('value');
             let name = $(e).attr("name") || '';
 
             /* if we have multiple selects i could convert them all to a btn-group? */
