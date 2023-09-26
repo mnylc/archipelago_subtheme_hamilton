@@ -20,6 +20,8 @@
           $(this).detach().appendTo("#main-breadcrumbs");
         });
 
+      }
+      if ($(context).is('.view') || context == document || $(context).is('.views-exposed-form')) {
         // Observe accordions that have Leaflet inside. If so, on show trigger a global resize event
         // Depends on Leaflet 1.9.4
 
