@@ -19,6 +19,22 @@
         $(context).once('view-header').find('.view-header .views-display-link').each(function () {
           $(this).detach().appendTo("#main-breadcrumbs");
         });
+
+        // Observe accordions that have Leaflet inside. If so, on show trigger a global resize event
+        // Depends on Leaflet 1.9.4
+
+        // document.getElementById('iiif-0-704597d2-48f0-4dfe-8861-11c5e8cb4fcb-0-map').dispatchEvent(new Event('resize'));
+        var CollapsibleList = [].slice.call(context.querySelectorAll('.accordion-collapse.collapse'));
+        const CollapsibleThatMatches = CollapsibleList.map(function (collapseEl) {
+          const el = collapseEl.querySelector('.strawberry-leaflet-item.leafletViewer');
+          if (el) {
+            collapseEl.addEventListener('shown.bs.collapse', function () {
+              el.dispatchEvent(new Event('resize'));
+            })
+          }
+        });
+        
+
         // Only act on selects in exposed forms for now.
         $('.views-exposed-form .form-select').each(function(i, e) {
           if (!($(e).data('convert') == 'no')) {
@@ -27,7 +43,7 @@
             let option = $(e).children('option:eq(' + selected + ')');
             let current =  option.html();
             let val = option.data('value');
-            let name = $(e).data('name') || '';
+            let name = $(e).attr("name") || '';
 
             /* if we have multiple selects i could convert them all to a btn-group? */
             let el = document.createElement('div')
