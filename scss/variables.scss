@@ -58,7 +58,7 @@ $headings-color: $gray-800;
 
 //Input and buttons
 $btn-white-space: nowrap;
-$border-radius: 0.75rem!default;
+$border-radius: 3.125rem!default;
 
 $input-border-radius:                   3.125rem !default;
 $input-border-radius-sm:                $input-border-radius;
@@ -134,6 +134,15 @@ $carousel-indicator-transition: opacity 0.5s, margin-right 0.5s;
 
     }
 
+  }
+  .list-group {
+    --bs-list-group-item-padding-x: 1rem;
+    --bs-list-group-item-padding-y: 0.5rem;
+    --bs-list-group-action-hover-color: $accent-shade;
+    --bs-list-group-action-hover-bg: #{$accent-shade};
+    --bs-list-group-action-active-bg: #{$quaternary-shade};
+    --bs-list-group-active-bg: #{$quaternary-shade};
+    --bs-list-group-active-border-color: #{$quaternary-shade};
   }
 }
 
