@@ -897,7 +897,7 @@ body {
       }
 
       div[data-bs-spy] {
-        h5:target {
+        h5:target, h5:active {
           background-color:#{$quaternary-shade};
         }
       }
