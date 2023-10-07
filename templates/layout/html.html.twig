@@ -24,7 +24,7 @@
  * @see template_preprocess_html()
  */
 #}
-{%
+{%-
   set body_classes = [
     logged_in ? 'user-logged-in',
     not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
@@ -32,7 +32,13 @@
     db_offline ? 'db-offline',
     'archipelago-hamilton-theme',
   ]
-%}
+-%}
+{%-  if 'page-view-browse-by-facets' in body_classes %}
+  {#  this will add scrollspy to any menu that has the class list-scrol on a browse-by-facets page #}
+  {% set attributes = attributes.setAttribute('data-bs-spy', 'scrollspy on a ') %}
+  {% set attributes = attributes.setAttribute('data-bs-target', '.list-scrollspy') %}
+  {% set attributes = attributes.setAttribute(' data-bs-smooth-scroll', 'true') %}
+{% endif -%}
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
