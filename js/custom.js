@@ -9,6 +9,22 @@
 
   Drupal.behaviors.archipelago_subtheme_hamilton = {
     attach: function (context, settings) {
+      function SetFixedPositioning(element) {
+        var currentOffset = element.offset();
+        element.css("position", "fixed");
+        element.offset(currentOffset);
+      }
+
+      $(once('hamilton-list-scrollspy', '.list-scrollspy', context)).each(function () {
+        var ele = $(this);
+        $(window).on('resize', function () {
+          SetFixedPositioning(ele);
+        });
+        SetFixedPositioning(ele);
+      });
+
+
+
       if ($(context).is('.view') || context == document) {
         /* Initialize Popovers */
         var popoverTriggerList = [].slice.call(context.querySelectorAll('[data-bs-toggle="popover"]'))
