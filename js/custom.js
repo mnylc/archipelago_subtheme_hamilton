@@ -10,6 +10,9 @@
   Drupal.behaviors.archipelago_subtheme_hamilton = {
     attach: function (context, settings) {
       function SetFixedPositioning(element) {
+        element.css("position", "");
+        element.css("left","");
+        element.css("top","");
         var currentOffset = element.offset();
         element.css("position", "fixed");
         element.offset(currentOffset);
@@ -18,9 +21,6 @@
       $(once('hamilton-list-scrollspy', '.list-scrollspy', context)).each(function () {
         var ele = $(this);
         $(window).on('resize', function () {
-          ele.css("position", "");
-          ele.css("left","");
-          ele.css("top","");
           SetFixedPositioning(ele);
         });
         SetFixedPositioning(ele);
