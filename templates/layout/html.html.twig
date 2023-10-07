@@ -33,9 +33,9 @@
     'archipelago-hamilton-theme',
   ]
 -%}
-{%-  if 'page-view-browse-by-facets' in body_classes %}
+{%-  if attributes.hasClass('page-view-browse-by-facets') %}
   {#  this will add scrollspy to any menu that has the class list-scrol on a browse-by-facets page #}
-  {% set attributes = attributes.setAttribute('data-bs-spy', 'scrollspy on a ') %}
+  {% set attributes = attributes.setAttribute('data-bs-spy', 'scroll') %}
   {% set attributes = attributes.setAttribute('data-bs-target', '.list-scrollspy') %}
   {% set attributes = attributes.setAttribute(' data-bs-smooth-scroll', 'true') %}
 {% endif -%}
