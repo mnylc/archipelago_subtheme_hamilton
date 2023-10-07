@@ -18,9 +18,9 @@
       $(once('hamilton-list-scrollspy', '.list-scrollspy', context)).each(function () {
         var ele = $(this);
         $(window).on('resize', function () {
-          ele.css("position", "relative");
-          var currentOffset = ele.offset();
-          ele.offset(currentOffset);
+          ele.css("position", "");
+          ele.css("left","");
+          ele.css("top","");
           SetFixedPositioning(ele);
         });
         SetFixedPositioning(ele);
