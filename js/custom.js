@@ -10,6 +10,7 @@
   Drupal.behaviors.archipelago_subtheme_hamilton = {
     attach: function (context, settings) {
       function SetFixedPositioning(element) {
+        element.css("position", "relative");
         var currentOffset = element.offset();
         element.css("position", "fixed");
         element.offset(currentOffset);
