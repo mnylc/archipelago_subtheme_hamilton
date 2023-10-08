@@ -31,7 +31,7 @@
         var ele = this;
         $(window).on('resize', function () {
           if (ele.classList.contains('list-scrollspy-fixed')) {
-            SetFixedPositioning(ele);
+            // SetFixedPositioning(ele);
           }
         });
       });
