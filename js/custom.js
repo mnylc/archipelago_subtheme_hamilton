@@ -18,10 +18,10 @@
         element.css("position", "fixed");
         element.offset(currentOffset);
         /* For some reason when the page starts already scrolled, the offset v/s the top property are all messed up */
-        /* 150 here is very specific to this theme. Sorry! */
+        /* 120 here is very specific to this theme. Sorry! */
         const topCss = +element.css('top').replace('px', '')
-        if (topCss < 150) {
-          element.css("top","150px");
+        if (topCss < 120) {
+          element.css("top","120px");
         }
       }
 
@@ -39,10 +39,10 @@
         element.css("position", "fixed");
         element.offset(currentOffset);
         /* For some reason when the page starts already scrolled, the offset v/s the top property are all messed up */
-        /* 150 here is very specific to this theme. Sorry! */
+        /* 120 here is very specific to this theme. Sorry! */
         const topCss = +element.css('top').replace('px', '')
-        if (topCss < 150) {
-          element.css("top","150px");
+        if (topCss < 120) {
+          element.css("top","120px");
         }
       }
 
@@ -165,15 +165,22 @@
             var observer = new IntersectionObserver(function (entries) {
               const ratio = entries[0].intersectionRatio;
               console.log(ratio);
-              if (ratio < 0.4) {
-                let $topbar = document.querySelector('#navbar-top');
+              if (ratio < 0.1) {
                 let $scrollspy = document.querySelector('.list-scrollspy');
-                if (!$topbar.classList.contains('intersected')) {
-                  $topbar.classList.add('intersected');
-                  if ($scrollspy) {
+                if ($scrollspy) {
+                  if (!$scrollspy.classList.contains('list-scrollspy-fixed')) {
                     SetFixedPositioning($scrollspy);
                     $scrollspy.classList.add('list-scrollspy-fixed');
                   }
+                }
+              }
+
+
+
+              if (ratio < 0.4) {
+                let $topbar = document.querySelector('#navbar-top');
+                if (!$topbar.classList.contains('intersected')) {
+                  $topbar.classList.add('intersected');
                 }
               }
               else if (ratio > 0.6) {
