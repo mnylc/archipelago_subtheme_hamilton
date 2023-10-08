@@ -18,10 +18,10 @@
         element.css("position", "fixed");
         element.offset(currentOffset);
         /* For some reason when the page starts already scrolled, the offset v/s the top property are all messed up */
-        /* 120 here is very specific to this theme. Sorry! */
+        /* 128 here is very specific to this theme. Sorry! */
         const topCss = +element.css('top').replace('px', '')
-        if (topCss < 120) {
-          element.css("top","120px");
+        if (topCss < 128) {
+          element.css("top","128px");
         }
       }
 
@@ -39,10 +39,10 @@
         element.css("position", "fixed");
         element.offset(currentOffset);
         /* For some reason when the page starts already scrolled, the offset v/s the top property are all messed up */
-        /* 120 here is very specific to this theme. Sorry! */
+        /* 128 here is very specific to this theme. Sorry! */
         const topCss = +element.css('top').replace('px', '')
-        if (topCss < 120) {
-          element.css("top","120px");
+        if (topCss < 128) {
+          element.css("top","128px");
         }
       }
 
@@ -174,9 +174,6 @@
                   }
                 }
               }
-
-
-
               if (ratio < 0.4) {
                 let $topbar = document.querySelector('#navbar-top');
                 if (!$topbar.classList.contains('intersected')) {
