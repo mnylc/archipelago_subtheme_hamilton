@@ -16,11 +16,13 @@
         element.css("top","");
         var currentOffset = element.offset();
         element.css("position", "fixed");
-        if (currentOffset.top < 446) {
-          currentOffset.top = 446;
-        }
         element.offset(currentOffset);
-        console.log(currentOffset);
+        /* For some reason when the page starts already scrolled, the offset v/s the top property are all messed up */
+        /* 150 here is very specific to this theme. Sorry! */
+        const topCss = +element.css('top').replace('px', '')
+        if (topCss < 150) {
+          element.css("top","150px");
+        }
       }
 
 
@@ -34,11 +36,14 @@
         element.css("top","");
         var currentOffset = element.offset();
         currentOffset.top = currentFixedOffset.top;
-        if (currentOffset.top < 446) {
-          currentOffset.top = 446;
-        }
         element.css("position", "fixed");
         element.offset(currentOffset);
+        /* For some reason when the page starts already scrolled, the offset v/s the top property are all messed up */
+        /* 150 here is very specific to this theme. Sorry! */
+        const topCss = +element.css('top').replace('px', '')
+        if (topCss < 150) {
+          element.css("top","150px");
+        }
       }
 
 
