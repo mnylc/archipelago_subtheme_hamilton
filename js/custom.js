@@ -17,6 +17,22 @@
         var currentOffset = element.offset();
         element.css("position", "fixed");
         element.offset(currentOffset);
+        console.log(currentOffset);
+      }
+
+
+      function ResetFixedPositioning(ele) {
+        let element = $(ele);
+        console.log(element.offset());
+        let currentFixedOffset = element.offset();
+        // We want to keep the Vertical offset
+        element.css("position", "");
+        element.css("left","");
+        element.css("top","");
+        var currentOffset = element.offset();
+        currentOffset.top = currentFixedOffset.top;
+        element.css("position", "fixed");
+        element.offset(currentOffset);
       }
 
 
@@ -26,15 +42,20 @@
         element.css("left","");
         element.css("top","");
       }
-
+      /* resize needs to be aware of this offset.
+               Can't be any offset.
+                */
       $(once('hamilton-list-scrollspy', '.list-scrollspy', context)).each(function () {
         var ele = this;
+        //window.addEventListener("resize", ResetFixedPositioning.bind(null, ele));
         $(window).on('resize', function () {
           if (ele.classList.contains('list-scrollspy-fixed')) {
-            // SetFixedPositioning(ele);
+            ResetFixedPositioning(ele);
           }
         });
       });
+
+
 
 
 
