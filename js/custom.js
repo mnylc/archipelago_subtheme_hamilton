@@ -30,7 +30,7 @@
       $(once('hamilton-list-scrollspy', '.list-scrollspy', context)).each(function () {
         var ele = this;
         $(window).on('resize', function () {
-          if (ele.classList.contains('.list-scrollspy-fixed')) {
+          if (ele.classList.contains('list-scrollspy-fixed')) {
             SetFixedPositioning(ele);
           }
         });
