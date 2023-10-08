@@ -16,6 +16,9 @@
         element.css("top","");
         var currentOffset = element.offset();
         element.css("position", "fixed");
+        if (currentOffset.top < 446) {
+          currentOffset.top = 446;
+        }
         element.offset(currentOffset);
         console.log(currentOffset);
       }
@@ -31,6 +34,9 @@
         element.css("top","");
         var currentOffset = element.offset();
         currentOffset.top = currentFixedOffset.top;
+        if (currentOffset.top < 446) {
+          currentOffset.top = 446;
+        }
         element.css("position", "fixed");
         element.offset(currentOffset);
       }
