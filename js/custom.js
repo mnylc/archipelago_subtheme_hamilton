@@ -139,7 +139,7 @@
                 if (!$topbar.classList.contains('intersected')) {
                   $topbar.classList.add('intersected');
                   if ($scrollspy) {
-                    SetFixedPositioning(ele);
+                    SetFixedPositioning($scrollspy);
                     $scrollspy.classList.add('list-scrollspy-fixed');
                   }
                 }
@@ -151,7 +151,7 @@
                   $topbar.classList.remove('intersected');
                   if ($scrollspy) {
                     $scrollspy.classList.remove('list-scrollspy-fixed');
-                    UnSetFixedPositioning(ele);
+                    UnSetFixedPositioning($scrollspy);
                   }
                 }
               }
