@@ -9,7 +9,8 @@
 
   Drupal.behaviors.archipelago_subtheme_hamilton = {
     attach: function (context, settings) {
-      function SetFixedPositioning(element) {
+      function SetFixedPositioning(ele) {
+        let element = $(ele);
         element.css("position", "");
         element.css("left","");
         element.css("top","");
@@ -18,12 +19,21 @@
         element.offset(currentOffset);
       }
 
+
+      function UnSetFixedPositioning(ele) {
+        let element = $(ele);
+        element.css("position", "");
+        element.css("left","");
+        element.css("top","");
+      }
+
       $(once('hamilton-list-scrollspy', '.list-scrollspy', context)).each(function () {
-        var ele = $(this);
+        var ele = this;
         $(window).on('resize', function () {
-          SetFixedPositioning(ele);
+          if (ele.classList.contains('.list-scrollspy-fixed')) {
+            SetFixedPositioning(ele);
+          }
         });
-        SetFixedPositioning(ele);
       });
 
 
@@ -122,16 +132,27 @@
         .each(function (index, value) {
             var observer = new IntersectionObserver(function (entries) {
               const ratio = entries[0].intersectionRatio;
+              console.log(ratio);
               if (ratio < 0.4) {
                 let $topbar = document.querySelector('#navbar-top');
+                let $scrollspy = document.querySelector('.list-scrollspy');
                 if (!$topbar.classList.contains('intersected')) {
                   $topbar.classList.add('intersected');
+                  if ($scrollspy) {
+                    SetFixedPositioning(ele);
+                    $scrollspy.classList.add('list-scrollspy-fixed');
+                  }
                 }
               }
               else if (ratio > 0.6) {
                 let $topbar = document.querySelector('#navbar-top');
+                let $scrollspy = document.querySelector('.list-scrollspy');
                 if ($topbar.classList.contains('intersected')) {
                   $topbar.classList.remove('intersected');
+                  if ($scrollspy) {
+                    $scrollspy.classList.remove('list-scrollspy-fixed');
+                    UnSetFixedPositioning(ele);
+                  }
                 }
               }
             },{
