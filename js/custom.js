@@ -46,6 +46,22 @@
         }
       }
 
+      function SetAbsolutePositioning(ele) {
+        let element = $(ele);
+        element.css("position", "");
+        element.css("left","");
+        element.css("top","");
+        var currentOffset = element.offset();
+        element.css("position", "absolute");
+        element.offset(currentOffset);
+        element.css("left","");
+        /* For some reason when the page starts already scrolled, the offset v/s the top property are all messed up */
+        /* 128 here is very specific to this theme. Sorry! */
+        const topCss = +element.css('top').replace('px', '')
+        if (topCss < 128) {
+          element.css("top","128px");
+        }
+      }
 
       function UnSetFixedPositioning(ele) {
         let element = $(ele);
