@@ -224,8 +224,17 @@
           var observerAfter = new IntersectionObserver(function (entries) {
             const ratio = entries[0].intersectionRatio;
             console.log(ratio);
-            if (ratio == 1) {
+            if (ratio == 1 && !passtThreasHold) {
               console.log(passtThreasHold);
+              let $scrollspy = document.querySelector('.list-scrollspy');
+              if ($scrollspy) {
+                if ($scrollspy.classList.contains('list-scrollspy-fixed')) {
+                  passtThreasHold = true
+                  SetAbsolutePositioning($scrollspy);
+                  $scrollspy.classList.remove('list-scrollspy-fixed');
+                  console.log(passtThreasHold);
+                }
+              }
             }
             // So here is the hard thing. On scroll down we will move from 0 to 1 but then again to 0
             // which migh trigger again a "fixed". So we need a 3 state thing
