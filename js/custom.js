@@ -58,7 +58,16 @@
                 */
       $(once('hamilton-list-scrollspy', '.list-scrollspy', context)).each(function () {
         var ele = this;
-        //window.addEventListener("resize", ResetFixedPositioning.bind(null, ele));
+        // To make the fixed scrollspy absolute when we reach the end (imagine a scalled window)
+        // or a another block after the content we are spying on
+        // we will add an element just after the div.content and check intersection
+        // This is extremely dependent on this themes/sites needs
+        // see html.html.twig where we set up the scroll spy data elements at the body level.
+        // and assumes only things inside ".content block" are spied on.
+        let $content = document.querySelector('div.content');
+        const trackerDiv = document.createElement("div", {"id":"after-scroll-spy"});
+        $content.insertAdjacentElement('afterend', trackerDiv);
+
         $(window).on('resize', function () {
           if (ele.classList.contains('list-scrollspy-fixed')) {
             ResetFixedPositioning(ele);
@@ -204,7 +213,7 @@
           },{
             root: null,
             rootMargin: '0px 0px',
-            threshold: [...Array(20).keys()].map(x => x / 20)
+            threshold: [...Array(10).keys()].map(x => x / 10)
           });
 
 
