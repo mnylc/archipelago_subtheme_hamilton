@@ -64,7 +64,7 @@
         // This is extremely dependent on this themes/sites needs
         // see html.html.twig where we set up the scroll spy data elements at the body level.
         // and assumes only things inside ".content block" are spied on.
-        let $content = document.querySelector('div.content');
+        let $content = document.querySelector('#content div.content');
         let trackerDiv = document.createElement("div");
         trackerDiv.setAttribute("id", "scrollspyAfter");
         $content.insertAdjacentElement('afterend', trackerDiv);
