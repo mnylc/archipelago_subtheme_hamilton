@@ -208,7 +208,7 @@
             });
 
 
-          var observerFooter = new IntersectionObserver(function (entries) {
+          var observerAfter = new IntersectionObserver(function (entries) {
             const ratio = entries[0].intersectionRatio;
             console.log(ratio);
           },{
@@ -222,10 +222,10 @@
             if ($observedElement) {
               observer.observe($observedElement)
             }
-            let $observedFooterElement = document.querySelector("footer.site-footer");
+            let $observedAfterElement = document.querySelector("#scrollspyAfter");
 
-          if ($observedFooterElement) {
-            observerFooter.observe($observedFooterElement)
+          if ($observedAfterElement) {
+            observerAfter.observe($observedAfterElement)
           }
 
 
