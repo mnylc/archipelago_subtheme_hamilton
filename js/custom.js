@@ -196,10 +196,29 @@
               rootMargin: '0px 0px',
               threshold: [...Array(20).keys()].map(x => x / 20)
             });
+
+
+          var observerFooter = new IntersectionObserver(function (entries) {
+            const ratio = entries[0].intersectionRatio;
+            console.log(ratio);
+          },{
+            root: null,
+            rootMargin: '0px 0px',
+            threshold: [...Array(20).keys()].map(x => x / 20)
+          });
+
+
             let $observedElement = document.querySelector("#navbar-main");
             if ($observedElement) {
               observer.observe($observedElement)
             }
+            let $observedFooterElement = document.querySelector("footer.site-footer");
+
+          if ($observedFooterElement) {
+            observerFooter.observe($observedFooterElement)
+          }
+
+
           }
         );
     }
