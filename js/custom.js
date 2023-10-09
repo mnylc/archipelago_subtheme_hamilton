@@ -76,10 +76,6 @@
         });
       });
 
-
-
-
-
       if ($(context).is('.view') || context == document) {
         /* Initialize Popovers */
         var popoverTriggerList = [].slice.call(context.querySelectorAll('[data-bs-toggle="popover"]'))
@@ -207,10 +203,20 @@
               threshold: [...Array(20).keys()].map(x => x / 20)
             });
 
+          let passtThreasHold = false;
 
           var observerAfter = new IntersectionObserver(function (entries) {
             const ratio = entries[0].intersectionRatio;
             console.log(ratio);
+            if (ratio == 1) {
+              console.log(passtThreasHold);
+            }
+            // So here is the hard thing. On scroll down we will move from 0 to 1 but then again to 0
+            // which migh trigger again a "fixed". So we need a 3 state thing
+            // where once 1 and scrolling down we stay there and only a 0 from 1 when scrolling up should
+            // re-fix the nav. Too much engineering.
+            // Also this threshold is in 10 increments to make it less sensitive and also less CPU
+            // consuming.
           },{
             root: null,
             rootMargin: '0px 0px',
