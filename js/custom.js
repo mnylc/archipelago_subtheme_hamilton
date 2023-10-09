@@ -65,7 +65,7 @@
         // see html.html.twig where we set up the scroll spy data elements at the body level.
         // and assumes only things inside ".content block" are spied on.
         let $content = document.querySelector('div.content');
-        const trackerDiv = document.createElement("div", {"id":"after-scroll-spy"});
+        const trackerDiv = document.createElement("div", {id:"after-scroll-spy"});
         $content.insertAdjacentElement('afterend', trackerDiv);
 
         $(window).on('resize', function () {
