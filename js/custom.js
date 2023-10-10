@@ -265,7 +265,7 @@
               // consuming.
             },{
               root: null,
-              rootMargin: '-75% 0% -75% 0%',
+              rootMargin: '-25% 0% -25% 0%',
               threshold: 0
             });
 
