@@ -242,11 +242,19 @@
                 let $scrollspy = document.querySelector('.list-scrollspy');
                 if ($scrollspy) {
                   if ($scrollspy.classList.contains('list-scrollspy-fixed')) {
-                    passtThreasHold = true
+                    passtThreasHold = true;
                     SetAbsolutePositioning($scrollspy);
                     $scrollspy.classList.remove('list-scrollspy-fixed');
                     console.log(passtThreasHold);
                   }
+                }
+              }
+              else if(ratio == 0 && passtThreasHold && document.querySelector("body").classList.contains('scrollup')) {
+                let $scrollspy = document.querySelector('.list-scrollspy');
+                if ($scrollspy) {
+                  passtThreasHold = false;
+                  SetFixedPositioning($scrollspy);
+                  $scrollspy.classList.add('list-scrollspy-fixed');
                 }
               }
               // So here is the hard thing. On scroll down we will move from 0 to 1 but then again to 0
