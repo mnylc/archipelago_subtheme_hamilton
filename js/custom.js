@@ -236,7 +236,7 @@
 
             var observerAfter = new IntersectionObserver(function (entries) {
               const ratio = entries[0].intersectionRatio;
-              //console.log(ratio);
+              console.log(ratio);
               if (ratio == 1 && !passtThreasHold) {
                 //console.log(passtThreasHold);
                 let $scrollspy = document.querySelector('.list-scrollspy');
@@ -265,7 +265,7 @@
               // consuming.
             },{
               root: null,
-              rootMargin: '-50% 0% -50% 0%',
+              rootMargin: '-75% 0% -75% 0%',
               threshold: 0
             });
 
