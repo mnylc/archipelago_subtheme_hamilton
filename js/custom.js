@@ -47,14 +47,21 @@
       }
 
       function SetAbsolutePositioning(ele) {
-        let element = $(ele);
-        element.css("position", "");
-        element.css("left","");
-        element.css("top","");
-        var currentOffset = element.offset();
-        element.css("position", "absolute");
-        element.offset(currentOffset);
-        element.css("left","");
+
+        const spiedOn = document.querySelector('#content div.content');
+        const scrollspy = document.querySelector('#content div.content .list-scrollspy');
+        if (spiedOn && scrollspy ) {
+          let Realtop = spiedOn.clientHeight - scrollspy.clientHeight;
+          if (Realtop > 0) {
+            let element = $(ele);
+            element.css("position", "");
+            element.css("left", "");
+            element.css("top", "");
+            element.css("position", "absolute");
+            element.css("left", "");
+            element.css("top",Realtop + 'px');
+          }
+        }
         /* For some reason when the page starts already scrolled, the offset v/s the top property are all messed up */
         /* 128 here is very specific to this theme. Sorry! */
         /*const topCss = +element.css('top').replace('px', '')
@@ -184,9 +191,9 @@
 
       $('#page-wrapper').once('attache_observer')
         .each(function (index, value) {
-          /* Used to keep track only once we passed the fake div we added after div.content so
-          we can position absolutely the scrollspy navigation
-           */
+            /* Used to keep track only once we passed the fake div we added after div.content so
+            we can position absolutely the scrollspy navigation
+             */
             let passtThreasHold = false;
             var observer = new IntersectionObserver(function (entries) {
               const ratio = entries[0].intersectionRatio;
