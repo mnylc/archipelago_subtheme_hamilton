@@ -1010,6 +1010,12 @@ body {
     }
 
 
+    .list-group-horizontal > .list-group-item + .list-group-item {
+      border-left-width: 1px;
+      border-left-style: solid;
+    }
+
+
     --bs-nav-pills-link-active-bg: var(--bs-primary);
     .facet-summary-item--count {
       display:inline-block;
