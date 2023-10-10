@@ -279,8 +279,8 @@
             // Also this threshold is in 10 increments to make it less sensitive and also less CPU
             // consuming.
           },{
-            root: null,
-            rootMargin: '0px 0px',
+            root: '-50% 0% -50% 0%',
+            rootMargin: '0',
             threshold: [...Array(10).keys()].map(x => x / 10)
           });
 
