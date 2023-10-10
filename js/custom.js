@@ -23,6 +23,9 @@
         if (topCss < 128) {
           element.css("top","128px");
         }
+        var scrollSpyContentEl = document.querySelector('body');
+        var scrollSpy = bootstrap.ScrollSpy.getInstance(scrollSpyContentEl);
+        scrollSpy.refresh();
       }
 
 
@@ -44,13 +47,17 @@
         if (topCss < 128) {
           element.css("top","128px");
         }
+        var scrollSpyContentEl = document.querySelector('body');
+        var scrollSpy = bootstrap.ScrollSpy.getInstance(scrollSpyContentEl);
+        scrollSpy.refresh();
       }
 
       function SetAbsolutePositioning(ele) {
-
         const spiedOn = document.querySelector('#content div.content');
         const scrollspy = document.querySelector('#content div.content .list-scrollspy');
         if (spiedOn && scrollspy ) {
+          var scrollSpyContentEl = document.querySelector('body');
+          var scrollSpy = bootstrap.ScrollSpy.getInstance(scrollSpyContentEl);
           let Realtop = spiedOn.clientHeight - scrollspy.clientHeight;
           if (Realtop > 0) {
             let element = $(ele);
@@ -60,6 +67,7 @@
             element.css("position", "absolute");
             element.css("left", "");
             element.css("top",Realtop + 'px');
+            scrollSpy.refresh();
           }
         }
         /* For some reason when the page starts already scrolled, the offset v/s the top property are all messed up */
