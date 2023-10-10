@@ -197,7 +197,7 @@
             let passtThreasHold = false;
             var observer = new IntersectionObserver(function (entries) {
               const ratio = entries[0].intersectionRatio;
-              console.log(ratio);
+              //console.log(ratio);
               if (ratio < 0.1) {
                 let $scrollspy = document.querySelector('.list-scrollspy');
                 if ($scrollspy) {
@@ -236,9 +236,9 @@
 
             var observerAfter = new IntersectionObserver(function (entries) {
               const ratio = entries[0].intersectionRatio;
-              console.log(ratio);
+              //console.log(ratio);
               if (ratio == 1 && !passtThreasHold) {
-                console.log(passtThreasHold);
+                //console.log(passtThreasHold);
                 let $scrollspy = document.querySelector('.list-scrollspy');
                 if ($scrollspy) {
                   if ($scrollspy.classList.contains('list-scrollspy-fixed')) {
@@ -269,6 +269,21 @@
               threshold: [...Array(10).keys()].map(x => x / 10)
             });
 
+          var observerContent = new IntersectionObserver(function (entries) {
+            const ratio = entries[0].intersectionRatio;
+            console.log(ratio);
+            // So here is the hard thing. On scroll down we will move from 0 to 1 but then again to 0
+            // which migh trigger again a "fixed". So we need a 3 state thing
+            // where once 1 and scrolling down we stay there and only a 0 from 1 when scrolling up should
+            // re-fix the nav. Too much engineering.
+            // Also this threshold is in 10 increments to make it less sensitive and also less CPU
+            // consuming.
+          },{
+            root: null,
+            rootMargin: '0px 0px',
+            threshold: [...Array(10).keys()].map(x => x / 10)
+          });
+
 
             let $observedElement = document.querySelector("#navbar-main");
             if ($observedElement) {
@@ -278,6 +293,13 @@
             if ($observedAfterElement) {
               observerAfter.observe($observedAfterElement)
             }
+
+
+          let $observedContent = document.querySelector('#content div.content');
+          if ($observedContent) {
+            observerContent.observe($observedContent)
+          }
+
           }
         );
     }
