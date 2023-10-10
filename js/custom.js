@@ -265,24 +265,10 @@
               // consuming.
             },{
               root: null,
-              rootMargin: '0px 0px',
+              rootMargin: '-50% 0% -50% 0%',
               threshold: [...Array(10).keys()].map(x => x / 10)
             });
-
-          var observerContent = new IntersectionObserver(function (entries) {
-            const ratio = entries[0].intersectionRatio;
-            console.log(ratio);
-            // So here is the hard thing. On scroll down we will move from 0 to 1 but then again to 0
-            // which migh trigger again a "fixed". So we need a 3 state thing
-            // where once 1 and scrolling down we stay there and only a 0 from 1 when scrolling up should
-            // re-fix the nav. Too much engineering.
-            // Also this threshold is in 10 increments to make it less sensitive and also less CPU
-            // consuming.
-          },{
-            root: '-50% 0% -50% 0%',
-            rootMargin: '0',
-            threshold: [...Array(10).keys()].map(x => x / 10)
-          });
+            
 
 
             let $observedElement = document.querySelector("#navbar-main");
@@ -293,12 +279,6 @@
             if ($observedAfterElement) {
               observerAfter.observe($observedAfterElement)
             }
-
-
-          let $observedContent = document.querySelector('#content div.content');
-          if ($observedContent) {
-            observerContent.observe($observedContent)
-          }
 
           }
         );
