@@ -909,12 +909,6 @@ body {
     .MuiAppBar-root {
       z-index:1000;
     }
-    .list-scrollspy {
-      transition: top 300ms linear;
-    }
-
-
-
 
     .region-top-header {
       padding-top: 0; //calc(var(--bs-gutter-x) * 0.250);
