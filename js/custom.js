@@ -57,10 +57,10 @@
         element.css("left","");
         /* For some reason when the page starts already scrolled, the offset v/s the top property are all messed up */
         /* 128 here is very specific to this theme. Sorry! */
-        const topCss = +element.css('top').replace('px', '')
+        /*const topCss = +element.css('top').replace('px', '')
         if (topCss < 128) {
           element.css("top","128px");
-        }
+        } */
       }
 
       function UnSetFixedPositioning(ele) {
@@ -184,6 +184,10 @@
 
       $('#page-wrapper').once('attache_observer')
         .each(function (index, value) {
+          /* Used to keep track only once we passed the fake div we added after div.content so
+          we can position absolutely the scrollspy navigation
+           */
+            let passtThreasHold = false;
             var observer = new IntersectionObserver(function (entries) {
               const ratio = entries[0].intersectionRatio;
               console.log(ratio);
@@ -193,6 +197,8 @@
                   if (!$scrollspy.classList.contains('list-scrollspy-fixed')) {
                     SetFixedPositioning($scrollspy);
                     $scrollspy.classList.add('list-scrollspy-fixed');
+                    // reset to false so we can act against when scrolling down.
+                    passtThreasHold = false;
                   }
                 }
               }
@@ -219,34 +225,34 @@
               threshold: [...Array(20).keys()].map(x => x / 20)
             });
 
-          let passtThreasHold = false;
 
-          var observerAfter = new IntersectionObserver(function (entries) {
-            const ratio = entries[0].intersectionRatio;
-            console.log(ratio);
-            if (ratio == 1 && !passtThreasHold) {
-              console.log(passtThreasHold);
-              let $scrollspy = document.querySelector('.list-scrollspy');
-              if ($scrollspy) {
-                if ($scrollspy.classList.contains('list-scrollspy-fixed')) {
-                  passtThreasHold = true
-                  SetAbsolutePositioning($scrollspy);
-                  $scrollspy.classList.remove('list-scrollspy-fixed');
-                  console.log(passtThreasHold);
+
+            var observerAfter = new IntersectionObserver(function (entries) {
+              const ratio = entries[0].intersectionRatio;
+              console.log(ratio);
+              if (ratio == 1 && !passtThreasHold) {
+                console.log(passtThreasHold);
+                let $scrollspy = document.querySelector('.list-scrollspy');
+                if ($scrollspy) {
+                  if ($scrollspy.classList.contains('list-scrollspy-fixed')) {
+                    passtThreasHold = true
+                    SetAbsolutePositioning($scrollspy);
+                    $scrollspy.classList.remove('list-scrollspy-fixed');
+                    console.log(passtThreasHold);
+                  }
                 }
               }
-            }
-            // So here is the hard thing. On scroll down we will move from 0 to 1 but then again to 0
-            // which migh trigger again a "fixed". So we need a 3 state thing
-            // where once 1 and scrolling down we stay there and only a 0 from 1 when scrolling up should
-            // re-fix the nav. Too much engineering.
-            // Also this threshold is in 10 increments to make it less sensitive and also less CPU
-            // consuming.
-          },{
-            root: null,
-            rootMargin: '0px 0px',
-            threshold: [...Array(10).keys()].map(x => x / 10)
-          });
+              // So here is the hard thing. On scroll down we will move from 0 to 1 but then again to 0
+              // which migh trigger again a "fixed". So we need a 3 state thing
+              // where once 1 and scrolling down we stay there and only a 0 from 1 when scrolling up should
+              // re-fix the nav. Too much engineering.
+              // Also this threshold is in 10 increments to make it less sensitive and also less CPU
+              // consuming.
+            },{
+              root: null,
+              rootMargin: '0px 0px',
+              threshold: [...Array(10).keys()].map(x => x / 10)
+            });
 
 
             let $observedElement = document.querySelector("#navbar-main");
@@ -254,12 +260,9 @@
               observer.observe($observedElement)
             }
             let $observedAfterElement = document.querySelector("#scrollspyAfter");
-
-          if ($observedAfterElement) {
-            observerAfter.observe($observedAfterElement)
-          }
-
-
+            if ($observedAfterElement) {
+              observerAfter.observe($observedAfterElement)
+            }
           }
         );
     }
