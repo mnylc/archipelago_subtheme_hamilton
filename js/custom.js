@@ -266,9 +266,9 @@
             },{
               root: null,
               rootMargin: '-50% 0% -50% 0%',
-              threshold: [...Array(10).keys()].map(x => x / 10)
+              threshold: 0
             });
-            
+
 
 
             let $observedElement = document.querySelector("#navbar-main");
