@@ -220,9 +220,15 @@
                 let $scrollspy = document.querySelector('.list-scrollspy');
                 if ($topbar.classList.contains('intersected')) {
                   $topbar.classList.remove('intersected');
-                  if ($scrollspy) {
-                    $scrollspy.classList.remove('list-scrollspy-fixed');
-                    UnSetFixedPositioning($scrollspy);
+
+                }
+              }
+              if (ratio > 0.5) {
+                let $scrollspy = document.querySelector('.list-scrollspy');
+                if ($scrollspy) {
+                  if ($scrollspy.classList.contains('list-scrollspy-fixed')) {
+                      $scrollspy.classList.remove('list-scrollspy-fixed');
+                      UnSetFixedPositioning($scrollspy);
                   }
                 }
               }
@@ -266,7 +272,7 @@
             },{
               root: null,
               rootMargin: '-25% 0% -25% 0%',
-              threshold: 0
+              threshold: 1
             });
 
 
