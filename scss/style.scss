@@ -1604,11 +1604,11 @@ a.highlighted_pumpkin {
           }
         }
       }
-      background-color: #207a9e !important;
+      background-color: #{$quaternary-shade} !important;
       div.highlighted_pumpkin_image_wrapper {
-        background-color: #207a9e !important;
+        background-color: #{$quaternary-shade} !important;
         img {
-          transform: rotate3d(1, 5, 3, -6deg) scale(1.1);
+          transform: rotate3d(1, 5, 3, -6deg) scale(1.2);
         }
       }
     }
