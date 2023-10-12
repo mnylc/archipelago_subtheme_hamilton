@@ -1526,12 +1526,15 @@ body:not(.scrolled) {
   clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 0 0);
   transition: clip-path 0.5s ease-in-out;
   &:hover {
-    clip-path: polygon(100% 4%, 100% 45%, 100% 96%, 2% 100%, 0 0);
+    clip-path: polygon(200% 4%, 200% 45%, 200% 96%, 2% 100%, 0 0);
+    z-index: 1000;
   }
 }
 
 .highlighted-item:hover + .highlighted-item {
+  pointer-events: none;
   clip-path: polygon(100% 0, 100% 45%, 100% 100%, 0 96%, 0 4%);
+  z-index: 900;
 }
 
 
@@ -1554,12 +1557,16 @@ a.highlighted_pumpkin {
         transition: color 0.3s;
         color: whitesmoke;
       }
-      p {
+      div.highlighted_pumpkin_description_wrapper {
         position: absolute;
         display: none;
         width: calc(100% - 2rem);
+        top: 0;
+        transition: top 0.3s ease-in-out;
         overflow: hidden;
-        font-size: medium;
+        p {
+          font-size: medium;
+        }
       }
       height: 20rem;
       padding: 2rem 2rem;
@@ -1587,20 +1594,41 @@ a.highlighted_pumpkin {
     }
     &:hover {
       div.highlighted_pumpkin_description {
+        overflow: visible;
         h1, h2, h3, h4, h5, p {
-          color: white;
+          color: black;
         }
         h5 {
-          display: none;
+          display: block;
+          position: absolute;
+          top: 0%;
         }
-        p {
-          display: -webkit-box;
-          -webkit-line-clamp: 5;
-          -webkit-box-orient: vertical;
+        div.highlighted_pumpkin_description_wrapper {
+          position: absolute;
+          display: block;
+          width: calc(100%);
+          height: calc(100% - 2rem);
+          padding: 1rem;
+          overflow: visible;
+          z-index: 1000;
+          p {
+            display: -webkit-box;
+            width: calc(100% - 5rem);
+            overflow:hidden;
+            font-size: medium;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+          }
+          background-color:#{$quaternary-shade};
+          opacity: 0.9;
+          left:0%;
+          top: 95%;
         }
         &.col-7 {
-          p {
-            -webkit-line-clamp: 10;
+          div.highlighted_pumpkin_description_wrapper {
+            p {
+              -webkit-line-clamp: 10;
+            }
           }
         }
       }
