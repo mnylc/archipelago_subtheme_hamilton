@@ -1648,7 +1648,7 @@ a.highlighted_pumpkin {
           position: absolute;
           display: block;
           width: calc(100%);
-          height: calc(105%);
+          height: calc(130%);
           padding: 1rem;
           overflow: visible;
           z-index: 1000;
@@ -1670,7 +1670,7 @@ a.highlighted_pumpkin {
           div.highlighted_pumpkin_description_wrapper {
             transition: top .3s ease-out, opacity .3s ease-out;
             left: 0%;
-            top: -150%;
+            top: -125%;
             pointer-events: auto;
           }
         }
