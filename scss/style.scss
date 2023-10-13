@@ -1021,6 +1021,13 @@ body {
       display:inline-block;
       font-size: $h4-font-size;
     }
+    .facet-summary-item--facet {
+      &.btn-primary {
+        a {
+          color: white !important;
+        }
+      }
+    }
     .sidebar .block {
       position: relative;
       &:first-of-type {
