@@ -1591,7 +1591,7 @@ a.highlighted_pumpkin {
     div.highlighted_pumpkin_description {
       &.col-12, &.col-7 {
         position: relative;
-        height: 10rem;
+        height: 7.5rem;
         padding: 1rem 1rem;
       }
       h1, h2, h3, h4, h5, p {
@@ -1670,7 +1670,7 @@ a.highlighted_pumpkin {
           div.highlighted_pumpkin_description_wrapper {
             transition: top .3s ease-out, opacity .3s ease-out;
             left: 0%;
-            top: -100%;
+            top: -150%;
             pointer-events: auto;
           }
         }
