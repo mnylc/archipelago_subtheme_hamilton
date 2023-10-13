@@ -18,6 +18,9 @@ textarea {
   background-color: #{$white};
   transition: border .25s, background-color 0.5s, color .25s;
 }
+input[type=button], input[type=submit]{
+  width:auto;
+}
 
 .form-type-select {
   // For the dropdown-toggle we don't use the before

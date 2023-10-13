@@ -1526,14 +1526,14 @@ body:not(.scrolled) {
   clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 0 0);
   transition: clip-path 0.5s ease-in-out;
   &:hover {
-    clip-path: polygon(200% 4%, 200% 45%, 200% 96%, 2% 100%, 0 0);
+    //clip-path: polygon(92% 4%, 92% 50%, 92% 96%, 8% 96%, 8% 4%);
     z-index: 1000;
   }
 }
 
 .highlighted-item:hover + .highlighted-item {
   pointer-events: none;
-  clip-path: polygon(100% 0, 100% 45%, 100% 100%, 0 96%, 0 4%);
+  //clip-path: polygon(100% 0, 100% 45%, 100% 100%, 0 96%, 0 4%);
   z-index: 900;
 }
 
@@ -1559,10 +1559,11 @@ a.highlighted_pumpkin {
       }
       div.highlighted_pumpkin_description_wrapper {
         position: absolute;
-        display: none;
+        /* display: none; blocks the animation */
+        opacity: 0;
         width: calc(100% - 2rem);
-        top: 0;
-        transition: top 0.3s ease-in-out;
+        top: 0px;
+        left: 0px;
         overflow: hidden;
         p {
           font-size: medium;
@@ -1600,20 +1601,19 @@ a.highlighted_pumpkin {
         }
         h5 {
           display: block;
-          position: absolute;
-          top: 0%;
         }
         div.highlighted_pumpkin_description_wrapper {
           position: absolute;
           display: block;
           width: calc(100%);
-          height: calc(100% - 2rem);
+          height: calc(105%);
           padding: 1rem;
           overflow: visible;
           z-index: 1000;
+          transition: top .3s ease-out, opacity .3s ease-out;
           p {
             display: -webkit-box;
-            width: calc(100% - 5rem);
+            //width: calc(100% - 5rem);
             overflow:hidden;
             font-size: medium;
             -webkit-line-clamp: 5;
@@ -1621,11 +1621,23 @@ a.highlighted_pumpkin {
           }
           background-color:#{$quaternary-shade};
           opacity: 0.9;
-          left:0%;
+          left: 0%;
           top: 95%;
+        }
+        &.col-12.order-last {
+          div.highlighted_pumpkin_description_wrapper {
+            transition: top .3s ease-out, opacity .3s ease-out;
+            left: 0%;
+            top: -100%;
+          }
         }
         &.col-7 {
           div.highlighted_pumpkin_description_wrapper {
+            transition: left .3s ease-out, opacity .3s ease-out;
+            left: 100%;
+            top: 0;
+            width: calc(72.5%);
+            height: calc(200%);
             p {
               -webkit-line-clamp: 10;
             }
@@ -1636,7 +1648,7 @@ a.highlighted_pumpkin {
       div.highlighted_pumpkin_image_wrapper {
         background-color: #{$quaternary-shade} !important;
         img {
-          transform: rotate3d(1, 5, 3, -6deg) scale(1.2);
+          transform: rotate3d(1, 1, 1, 1deg) scale(1.2);
         }
       }
     }
