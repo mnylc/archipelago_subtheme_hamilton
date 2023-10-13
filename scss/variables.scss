@@ -156,10 +156,9 @@ $carousel-indicator-transition: opacity 0.5s, margin-right 0.5s;
       text-decoration: none;
       color: white;
       &:hover {
-        color: $quaternary-shade;
+        color: #{$link-color};
         text-decoration: none;
       }
-
     }
 
   }
