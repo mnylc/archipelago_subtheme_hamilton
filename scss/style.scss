@@ -1606,6 +1606,7 @@ a.highlighted_pumpkin {
         top: 0px;
         left: 0px;
         overflow: hidden;
+        pointer-events: none;
         p {
           font-size: medium;
         }
@@ -1670,6 +1671,7 @@ a.highlighted_pumpkin {
             transition: top .3s ease-out, opacity .3s ease-out;
             left: 0%;
             top: -100%;
+            pointer-events: auto;
           }
         }
         &.col-7 {
