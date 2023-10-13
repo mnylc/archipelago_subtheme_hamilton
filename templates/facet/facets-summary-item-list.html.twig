@@ -35,9 +35,9 @@
           <li{{ item.attributes.addClass('facet-summary-item--count','me-1')}}>
         {%- else -%}
             {%- if item.attributes.hasClass('facet-summary-item--query') -%}
-        <li{{ item.attributes.addClass('btn','btn-primary','btn-sm', 'me-1')}}>
-            {%-  else -%}
         <li{{ item.attributes.addClass('btn','btn-secondary','btn-sm', 'me-1')}}>
+            {%-  else -%}
+        <li{{ item.attributes.addClass('btn','btn-primary','btn-sm', 'me-1')}}>
             {%- endif -%}
         {%- endif -%}
         {{ item.value }}</li>
