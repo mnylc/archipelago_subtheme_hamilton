@@ -1179,6 +1179,13 @@ body {
 
     /* special class added via the UI for the advanced search */
 
+    section.region-header-form {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: stretch;
+    }
+
     /* Exposed form overrides based on bef */
     .views-exposed-form.bef-exposed-form {
       label {
