@@ -1021,6 +1021,18 @@ body {
       display:inline-block;
       font-size: $h4-font-size;
     }
+
+    .facet-summary {
+      li.btn {
+        padding:0;
+        a {
+          display: block;
+          padding: 4px;
+          text-decoration: none;
+        }
+      }
+    }
+
     .facet-summary-item--facet {
       &.btn-primary {
         a {
