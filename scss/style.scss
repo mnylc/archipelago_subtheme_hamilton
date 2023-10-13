@@ -1185,6 +1185,13 @@ body {
         @extend .visually-hidden;
       }
       display: flex;
+
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      flex-direction: row;
+      flex-shrink: 1;
+
       .form-item-sort-bef-combine {
         .form-select.bef-links {
           /* padding: 0;
