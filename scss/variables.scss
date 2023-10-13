@@ -137,10 +137,10 @@ $carousel-indicator-transition: opacity 0.5s, margin-right 0.5s;
   .btn-tertiary {
     --bs-btn-bg: transparent;
     --bs-btn-color: white;
-    --bs-btn-bg: shade-color($accent-shade, $btn-hover-bg-shade-amount);
+    --bs-btn-bg: #{shade-color($accent-shade, $btn-hover-bg-shade-amount)};
     --bs-btn-active-color: white;
     --bs-btn-active-bg: transparent;
-    --bs-btn-border-color: shade-color($accent-shade, $btn-hover-bg-shade-amount);
+    --bs-btn-border-color: #{$accent-shade};
     --bs-btn-hover-color: #{$link-color};
     --bs-btn-hover-bg: #{$quaternary-shade};
     --bs-btn-hover-border-color: #{$quaternary-shade};
