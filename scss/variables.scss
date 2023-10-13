@@ -136,7 +136,6 @@ $carousel-indicator-transition: opacity 0.5s, margin-right 0.5s;
     }
   }
   .btn-tertiary {
-    --bs-btn-bg: transparent;
     --bs-btn-color: white;
     --bs-btn-bg: #{shade-color($accent-shade, 25%)};
     --bs-btn-active-color: white;
