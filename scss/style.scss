@@ -1184,6 +1184,14 @@ body {
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: stretch;
+      .block-block-content {
+        display: flex;
+        flex-shrink: 3;
+        margin-right: 0;
+        .content {
+          display:flex;
+        }
+      }
     }
 
     /* Exposed form overrides based on bef */
