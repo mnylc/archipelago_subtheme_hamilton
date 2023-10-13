@@ -1218,7 +1218,7 @@ body {
       align-items: flex-start;
       flex-direction: row;
       flex-shrink: 1;
-
+      --bs-gutter-x: 0;
       .form-item-sort-bef-combine {
         .form-select.bef-links {
           /* padding: 0;
