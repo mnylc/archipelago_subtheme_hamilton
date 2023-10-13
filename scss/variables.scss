@@ -148,7 +148,7 @@ $carousel-indicator-transition: opacity 0.5s, margin-right 0.5s;
       --bs-btn-active-bg: #{$link-color};
       --bs-btn-active-color: #{$white};
       a {
-        color: #{$quaternary-shade};
+        color: #{$link-color};
         text-decoration: none;
       }
     }
