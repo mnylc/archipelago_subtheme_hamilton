@@ -91,7 +91,6 @@ body {
   }
 
   .site-footer__bottom {
-
     .bottom-bit {
       margin-left:auto;
       margin-right: auto;
@@ -198,6 +197,13 @@ body {
 
 /*  overrides down from md  */
 @include media-breakpoint-down(md) {
+
+  /* hide any sort option for search. Uses too much space
+   */
+  .form-item-sort-bef-combine {
+    display:none;
+  }
+
   .navbar-brand {
     font-size: $navbar-brand-font-size-mobile;
     /* overrides Bootstrap '.row > *' */
