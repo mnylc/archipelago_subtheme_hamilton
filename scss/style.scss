@@ -563,6 +563,11 @@ body {
         flex-direction: row-reverse;
       }
     }
+    .path-frontpage #main-breadcrumbs {
+      /* Don't take space on the front page */
+      margin-top: 0;
+      margin-bottom: 0;
+    }
     /* Make this the main style even if not in the main breadcrumbs
     to avoid JS jumping layouts on repositioning
      */
