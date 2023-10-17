@@ -316,7 +316,7 @@ body {
 
   #main-breadcrumbs {
     div:only-of-type {
-      flex-basis: 100%;
+      flex-shrink: 3;
     }
   }
 
@@ -557,9 +557,9 @@ body {
         @extend .btn-sm;
       }
       .views-exposed-form {
-        order:3;
+        order:1;
         flex-grow: 0;
-        flex-shrink: 0;
+        flex-shrink: 3;
         flex-direction: row-reverse;
       }
     }
