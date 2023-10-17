@@ -166,6 +166,7 @@
             select.appendChild(dropdown);
             select.appendChild(dropdownItems);
             select.appendChild(hidden);
+            let parentForm = e.parentNode.parentNode.parentNode;
 
             for (const option of $(e).get(0).options) {
               // const item = document.createElement('li');
@@ -189,7 +190,7 @@
                   toggle.textContent = this.textContent;
                   // Create a new 'change' event so any attached events by beef autosubmit also work?
                   var event = new Event('change');
-                  e.parentNode.parentNode.parentNode.dispatchEvent(event);
+                  parentForm.dispatchEvent(event);
                 }
                 f.preventDefault();
               }, false);
