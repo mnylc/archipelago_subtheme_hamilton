@@ -679,6 +679,11 @@ body {
           position: absolute;
           top: -6.25rem;
         }
+        &.advanced-search-box {
+          .view-header {
+            top: -4.25rem;
+          }
+        }
       }
     }
 
