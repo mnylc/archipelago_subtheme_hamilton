@@ -190,7 +190,7 @@
                   toggle.textContent = this.textContent;
                   // Create a new 'change' event so any attached events by beef autosubmit also work?
                   var event = new Event('change');
-                  parentForm.dispatchEvent(event);
+                  hidden.closest('form').dispatchEvent(event);
                 }
                 f.preventDefault();
               }, false);
