@@ -181,7 +181,7 @@
             }
             var linkList = [].slice.call(select.querySelectorAll('.dropdown-menu a'))
             var dropdownList = linkList.map(function (menuItemLinks) {
-              menuItemLinks.addEventListener('click',function (e) {
+              menuItemLinks.addEventListener('click',function (f) {
                 let hidden = select.querySelector('input[type=hidden]');
                 if (hidden) {
                   hidden.value = this.dataset.value;
@@ -189,9 +189,9 @@
                   toggle.textContent = this.textContent;
                   // Create a new 'change' event so any attached events by beef autosubmit also work?
                   var event = new Event('change');
-                  hidden.dispatchEvent(event);
+                  e.parentNode.parentNode.parentNode.dispatchEvent(event);
                 }
-                e.preventDefault();
+                f.preventDefault();
               }, false);
             });
 
