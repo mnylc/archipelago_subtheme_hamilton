@@ -28,7 +28,6 @@
         scrollSpy.refresh();
       }
 
-
       function ResetFixedPositioning(ele) {
         let element = $(ele);
         console.log(element.offset());
@@ -166,8 +165,6 @@
             select.appendChild(dropdown);
             select.appendChild(dropdownItems);
             select.appendChild(hidden);
-            let parentForm = e.parentNode.parentNode.parentNode;
-
             for (const option of $(e).get(0).options) {
               // const item = document.createElement('li');
               // item.classList.add('dropdown-item');
@@ -188,9 +185,12 @@
                   hidden.value = this.dataset.value;
                   let toggle = select.querySelector('.dropdown-toggle');
                   toggle.textContent = this.textContent;
-                  // Create a new 'change' event so any attached events by beef autosubmit also work?
-                  var event = new Event('change');
-                  hidden.closest('form').dispatchEvent(event);
+                 // We tried to use events (dispatch 'change') but on ajax reload the listener om auto submit
+                  // breaks. but we can always "click" the button!
+                  let autosubmit =  hidden.closest('form').querySelector('[data-bef-auto-submit-click]');
+                  if (autosubmit) {
+                    autosubmit.click();
+                  }
                 }
                 f.preventDefault();
               }, false);
