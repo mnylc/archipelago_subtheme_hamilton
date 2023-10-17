@@ -119,6 +119,7 @@
         });
 
       }
+      /* Deals with Selects to Drop Downs */
       if ($(context).is('.view') || context == document || $(context).is('.views-exposed-form')) {
         // Observe accordions that have Leaflet inside. If so, on show trigger a global resize event
         // Depends on Leaflet 1.9.4
@@ -133,7 +134,6 @@
             })
           }
         });
-
 
         // Only act on selects in exposed forms for now.
         $('.views-exposed-form .form-select').each(function(i, e) {
@@ -187,6 +187,9 @@
                   hidden.value = this.dataset.value;
                   let toggle = select.querySelector('.dropdown-toggle');
                   toggle.textContent = this.textContent;
+                  // Create a new 'change' event so any attached events by beef autosubmit also work?
+                  var event = new Event('change');
+                  hidden.dispatchEvent(event);
                 }
                 e.preventDefault();
               }, false);
