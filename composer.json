@@ -1,0 +1,10 @@
+{
+	"name": "mnylc/archipelago_subtheme_hamilton",
+	"type": "drupal-theme",
+	"description": "Barnard College SASS subtheme for Barrio Theme made for Archipelago.",
+	"homepage": "https://github.com/mnylc/archipelago_subtheme_barnard",
+	"license": "GPL-2.0+",
+	"require": {
+		"drupal/bootstrap_barrio": ">=5.5.6"
+	}
+}
