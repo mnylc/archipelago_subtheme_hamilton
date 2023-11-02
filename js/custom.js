@@ -30,7 +30,6 @@
 
       function ResetFixedPositioning(ele) {
         let element = $(ele);
-        console.log(element.offset());
         let currentFixedOffset = element.offset();
         // We want to keep the Vertical offset
         element.css("position", "");
@@ -253,7 +252,7 @@
 
             var observerAfter = new IntersectionObserver(function (entries) {
               const ratio = entries[0].intersectionRatio;
-              console.log(ratio);
+
               if (ratio == 1 && !passtThreasHold) {
                 //console.log(passtThreasHold);
                 let $scrollspy = document.querySelector('.list-scrollspy');
@@ -262,7 +261,6 @@
                     passtThreasHold = true;
                     SetAbsolutePositioning($scrollspy);
                     $scrollspy.classList.remove('list-scrollspy-fixed');
-                    console.log(passtThreasHold);
                   }
                 }
               }
