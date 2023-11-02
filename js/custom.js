@@ -113,10 +113,9 @@
           return new bootstrap.Popover(popoverTriggerEl)
         })
         $("#main-breadcrumbs").find('.views-display-link').remove();
-        $(context).once('view-header').find('.view-header .views-display-link').each(function () {
+        $(once('view-header', '.view-header .views-display-link', context)).each(function () {
           $(this).detach().appendTo("#main-breadcrumbs");
         });
-
       }
       /* Deals with Selects to Drop Downs */
       if ($(context).is('.view') || context == document || $(context).is('.views-exposed-form')) {
@@ -201,7 +200,7 @@
         });
       }
 
-      $('#page-wrapper').once('attache_observer')
+      $(once('attache_observer', '#page-wrapper', context))
         .each(function (index, value) {
             /* Used to keep track only once we passed the fake div we added after div.content so
             we can position absolutely the scrollspy navigation
@@ -286,8 +285,6 @@
               rootMargin: '-35% 0% -35% 0%',
               threshold: 1
             });
-
-
 
             let $observedElement = document.querySelector("#navbar-main");
             if ($observedElement) {
