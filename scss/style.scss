@@ -204,6 +204,10 @@ body {
     display:none;
   }
 
+  #block-currentadvancedsearchbutton {
+    display:none;
+  }
+
   .navbar-brand {
     font-size: $navbar-brand-font-size-mobile;
     /* overrides Bootstrap '.row > *' */
@@ -693,7 +697,9 @@ body {
     }
 
     .view-header {
-      padding-bottom: 1rem;
+      /* Remove padding bottom and test.
+       padding-bottom: 1rem;
+       */
       a.views-display-link {
         visibility: hidden;
         @extend .visually-hidden;
