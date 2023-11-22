@@ -68,3 +68,18 @@ input[type=button], input[type=submit]{
 .form-row > div.form-actions {
   padding-right: 0;
 }
+
+/* Mobile down from lg */
+@include media-breakpoint-down(lg) {
+  .form-type-select {
+    // For the dropdown-toggle we don't use the before
+    .dropdown > .btn.dropdown-toggle {
+      padding: 0.625rem 1.25rem 0.625rem 1.25rem;
+    }
+    select {
+      padding: 0.625rem 1.25rem 0.625rem 1.25rem;
+    }
+  }
+}
+
+
