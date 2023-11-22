@@ -124,6 +124,19 @@ body {
       }
     }
   }
+  .archipelago-hamilton-theme #page {
+    .advanced-search-box {
+      .views-exposed-form {
+        .form-row {
+          .fieldset-wrapper {
+            column-gap: 0;
+            flex-flow: column;
+            row-gap: 1rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 
@@ -261,19 +274,6 @@ body {
     dd {
       margin-left: 5%;
       width: fit-content;
-    }
-  }
-  .archipelago-hamilton-theme #page {
-    .advanced-search-box {
-      .views-exposed-form {
-        .form-row {
-          .fieldset-wrapper {
-            column-gap: 0;
-            flex-flow: column;
-            row-gap: 1rem;
-          }
-        }
-      }
     }
   }
 }
@@ -556,6 +556,10 @@ body {
     #navbar-top {
       padding: 0 0.5rem;
       min-height: 120px;
+      &.affix {
+        // To not overlay Drupal's admin bar
+        z-index: 500;
+      }
     }
 
     .highlighted {
@@ -941,7 +945,7 @@ body {
   .archipelago-hamilton-theme {
     /* Mirador Multibar Override */
     .MuiAppBar-root {
-      z-index:1000;
+      z-index:499;
     }
 
     .region-top-header {
