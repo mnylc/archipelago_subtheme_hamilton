@@ -263,13 +263,15 @@ body {
       width: fit-content;
     }
   }
-  .advanced-search-box {
-    .views-exposed-form {
-      .form-row {
-        .fieldset-wrapper {
-          column-gap:0;
-          flex-flow: column;
-          row-gap: 1rem;
+  .archipelago-hamilton-theme #page {
+    .advanced-search-box {
+      .views-exposed-form {
+        .form-row {
+          .fieldset-wrapper {
+            column-gap: 0;
+            flex-flow: column;
+            row-gap: 1rem;
+          }
         }
       }
     }
