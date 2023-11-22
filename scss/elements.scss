@@ -28,7 +28,7 @@ input[type=button], input[type=submit]{
     --bs-btn-border-color: #{$gray-100};
     --bs-btn-color: #{$accent-dark};
     line-height: 1.5rem;
-    padding: 0.625rem 3.625rem 0.625rem 1.875rem;
+    padding: 0.625rem 1.875rem 0.625rem 1.875rem;
     height: 100%;
     text-transform: uppercase;
     font-weight: 600;
@@ -41,7 +41,7 @@ input[type=button], input[type=submit]{
   }
 
   select  {
-    padding: 0.625rem 3.625rem 0.625rem 1.875rem;
+    padding: 0.625rem 1.875rem 0.625rem 1.875rem;
     height: 100%;
     text-transform: uppercase;
     font-weight: 600;
@@ -67,19 +67,6 @@ input[type=button], input[type=submit]{
 
 .form-row > div.form-actions {
   padding-right: 0;
-}
-
-/* Mobile down from lg */
-@include media-breakpoint-down(lg) {
-  .form-type-select {
-    // For the dropdown-toggle we don't use the before
-    .dropdown > .btn.dropdown-toggle {
-      padding: 0.625rem 1.25rem 0.625rem 1.25rem;
-    }
-    select {
-      padding: 0.625rem 1.25rem 0.625rem 1.25rem;
-    }
-  }
 }
 
 

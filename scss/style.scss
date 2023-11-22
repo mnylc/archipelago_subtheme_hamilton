@@ -137,6 +137,15 @@ body {
         }
       }
     }
+    .form-type-select {
+      // For the dropdown-toggle we don't use the before
+      .dropdown > .btn.dropdown-toggle {
+        padding: 0.625rem 1.25rem 0.625rem 1.25rem;
+      }
+      select {
+        padding: 0.625rem 1.25rem 0.625rem 1.25rem;
+      }
+    }
   }
 }
 
