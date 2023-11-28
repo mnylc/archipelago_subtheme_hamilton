@@ -305,6 +305,12 @@ body {
   .nav-item.menu-item--expanded.dropdown {
     z-index: 9999;
   }
+  #navbar-top .navbar-nav{
+    flex-direction: row;
+    height: 87px;
+    align-items: center;
+    column-gap: map-get($spacers, 1); // Same as px-4
+  }
 
   .navbar-nav .dropdown-menu {
     position: absolute;
@@ -353,12 +359,6 @@ body {
     display:flex;
   }
 
-  #navbar-top .navbar-nav{
-    flex-direction: row;
-    height: 87px;
-    align-items: center;
-    column-gap: map-get($spacers, 1); // Same as px-4
-  }
   #navbar-main .views-exposed-form form {
     display: flex;
     align-items: center;
@@ -1199,7 +1199,7 @@ body {
       ul.dropdown-menu {
         --bs-dropdown-bg: var(--bs-body-color);
         --bs-dropdown-link-color: #{$white};
-        --bs-dropdown-min-width: 15rem;
+        --bs-dropdown-min-width: 12rem;
         .dropdown-item  {
           a {
             color: #{$navbar-dark-bg-active-color};
