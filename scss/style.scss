@@ -79,6 +79,16 @@ body {
 
 
 @include media-breakpoint-down(lg) {
+
+  section.region-top-header-form {
+    nav {
+      margin-right: 0rem;
+      margin-top:0.5rem;
+      margin-bottom:0.5rem;
+      border-top: 1px solid rgba(208,208,208,.25);
+    }
+  }
+
   #navbar-main {
     background-position-x: 20rem !important;
     input[name="search_api_fulltext"] {
