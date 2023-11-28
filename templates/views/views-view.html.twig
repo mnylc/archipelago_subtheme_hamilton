@@ -50,6 +50,9 @@
       {{ header }}
     </div>
   {% endif %}
+  {% if pager %}
+    {{ pager }}
+  {% endif %}
   {% if exposed %}
     <div class="view-filters my-3">
       {{ exposed }}

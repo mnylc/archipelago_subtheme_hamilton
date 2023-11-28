@@ -549,6 +549,13 @@ body {
   /* Rest of the pages Page exception */
   .archipelago-hamilton-theme {
 
+    .pagination {
+        --bs-pagination-active-bg: #b0defc;
+        --bs-pagination-active-color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+        --bs-pagination-active-border-color: transparent;
+        --bs-pagination-hover-border-color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+    }
+
     .breadcrumb {
       /*.breadcrumb-item + .breadcrumb-item::before {
         font-family: "Font Awesome 5 Free";
@@ -569,6 +576,11 @@ body {
       &.affix {
         // To not overlay Drupal's admin bar
         z-index: 500;
+      }
+      section.region-top-header-form {
+        nav {
+          margin-right: 3rem;
+        }
       }
     }
 
@@ -1187,9 +1199,11 @@ body {
       ul.dropdown-menu {
         --bs-dropdown-bg: var(--bs-body-color);
         --bs-dropdown-link-color: #{$white};
+        --bs-dropdown-min-width: 15rem;
         .dropdown-item  {
           a {
             color: #{$navbar-dark-bg-active-color};
+            white-space: normal;
           }
         }
       }
