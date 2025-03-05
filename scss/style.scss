@@ -78,8 +78,28 @@ body {
 }
 
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
+  #sidebar-second {
+    &.navbar {
+      pointer-events: none;
+      position: sticky;
+      z-index: 1190;
+    }
+  }
+}
+// Hides sidebar canvas close if the offcanvas is not in show mode
+@include media-breakpoint-up(xl) {
+  #navbarOffcanvasSideBar {
+    &:not(.show) {
+      button {
+        display: none;
+      }
+    }
+  }
+}
 
+
+@include media-breakpoint-down(lg) {
   section.region-top-header-form {
     nav {
       margin-right: 0rem;
