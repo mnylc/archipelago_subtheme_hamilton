@@ -515,6 +515,27 @@ body {
     background-color: #de7777;
     border-color: transparent;
   }
+  .sitewide-alert {
+    text-align:center;
+    .close {
+      position: absolute;
+      right: 1rem;
+      margin-left: 1rem;
+    }
+    &.alert {
+      --bs-alert-margin-bottom: 0rem;
+      --bs-alert-border-radius: 0;
+    }
+    &.alert-info {
+      color: #{$gray-800};
+      background-color: #{$gray-200};
+      font-weight: 600;
+    }
+    p {
+      margin-bottom: 0;
+      padding-right: 1.5rem;
+    }
+  }
   /*Facet summary */
   .block-facets-summary {
     ul.facet-summary {
@@ -1202,7 +1223,7 @@ body {
 
     .navbar-dark {
       ul.dropdown-menu {
-        --bs-dropdown-bg: var(--bs-pirmary);
+        --bs-dropdown-bg: var(--bs-primary);
         --bs-dropdown-link-color: #{$white};
         --bs-dropdown-min-width: 12rem;
         .dropdown-item  {
@@ -1793,11 +1814,6 @@ a.highlighted_pumpkin {
   -webkit-font-smoothing: antialiased;
 }
 
-/**
- * Set base styles for the off-canvas dialog.
- * @internal
-
-
 #drupal-off-canvas-wrapper *:where(:not(svg, svg *, .ck-reset *, [data-drupal-ck-style-fence] *, .ui-resizable-handle)) {
   all: revert;
   box-sizing: border-box;
@@ -1811,7 +1827,7 @@ a.highlighted_pumpkin {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
-*/
+
 
 #drupal-off-canvas-wrapper *:not(details) a,
 #drupal-off-canvas-wrapper *:not(details) .link {
