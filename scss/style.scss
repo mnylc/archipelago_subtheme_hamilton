@@ -573,7 +573,7 @@ body {
         text-rendering: auto;
       }*/
       --bs-breadcrumb-divider: ">";
-      --bs-breadcrumb-divider-color: #{$white};
+      --bs-breadcrumb-divider-color: #{$primary-shade};
     }
     #navbar-top {
       padding: 0 0.5rem;
