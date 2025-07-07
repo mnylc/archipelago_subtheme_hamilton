@@ -13,13 +13,13 @@
  */
 #}
 {% set attributes = attributes.addClass('site-branding') %}
-<div class="d-flex flex-wrap align-content-center align-items-center position-relative">
+<div class="d-flex flex-wrap align-content-start align-items-start  position-relative">
 {% if site_logo or site_name %}
-  <a href="/" title="{{ 'Digital Collections Hamilton College Library'|t }}" target="_self" class="navbar-brand stretched-link">
+  <a href="/" title="{{ 'The Hamilton College Commons'|t }}" target="_self" class="navbar-brand stretched-link">
     {% if site_logo %}
-      <object data="{{ site_logo }}" alt="{{ 'Hamilton College Library'|t }}" class="icon_logo img-fluid align-self-center" /> </object>
+      <object data="{{ site_logo }}" alt="{{ 'The Hamilton College Commons'|t }}" class="icon_logo img-fluid align-self-start" /> </object>
     {% endif %}
-    <span class="ml-2 d-md-inline">College Library{#  site_name #}</span>
+    <span class="ml-2 d-md-inline">{{ site_name }}</span>
   </a>
 {% endif %}
 {% if site_slogan %}

@@ -1,6 +1,6 @@
 /*
-Theme Name: Bootstrap 4 Sass
-Description: Bootstrap 4 with Sass
+Theme Name: Bootstrap 5 Sass
+Description: Bootstrap 5 with Sass
 */
 
 // import files
@@ -105,7 +105,6 @@ body {
       margin-right: 0rem;
       margin-top:0.5rem;
       margin-bottom:0.5rem;
-      border-top: 1px solid rgba(208,208,208,.25);
     }
   }
 
@@ -351,7 +350,6 @@ body {
     .to-be-collapsed {
       /* Avoid Flex Jumpin' around */
       height: 4.75rem;
-      border-top: 1px solid #{$primary-light};
       /* Avoid flex having extra space and messing the white bar on large sizes */
       flex-basis: 100%;
       .nav-item {
@@ -463,11 +461,10 @@ body {
     min-height: 8rem;
     padding-top: calc(var(--bs-gutter-y) * 0.5);
     padding-bottom: calc(var(--bs-gutter-y) * 0.5);
-    border-bottom: 1px solid #{$primary-light};
     background-repeat: repeat-y;
     background-position-x: 130%;
     .not-to-be-collapsed {
-      min-height: 12rem;
+      min-height: 2rem;
       height: max-content;
     }
   }
@@ -506,27 +503,6 @@ body {
     color: #{$link-color};
     background-color: #e3eee6;
     border-color: transparent;
-  }
-  .sitewide-alert {
-    text-align:center;
-    .close {
-      position: absolute;
-      right: 1rem;
-      margin-left: 1rem;
-    }
-    &.alert {
-      --bs-alert-margin-bottom: 0rem;
-      --bs-alert-border-radius: 0;
-    }
-    &.alert-info {
-      color: #{$gray-800};
-      background-color: #F4CAC9;
-      font-weight: 600;
-    }
-    p {
-      margin-bottom: 0;
-      padding-right: 1.5rem;
-    }
   }
 
   .alert-warning {
@@ -578,7 +554,6 @@ body {
 
   /* Rest of the pages Page exception */
   .archipelago-hamilton-theme {
-
     .pagination {
         --bs-pagination-active-bg: #b0defc;
         --bs-pagination-active-color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
@@ -935,11 +910,11 @@ body {
         }
       }
 
-      /* TODO make it only for advanced-search-box */
       .views-exposed-form {
         .form-row {
           display: flex;
           row-gap: 1rem;
+          grid-gap:0.5rem;
           button:not(.form-submit) {
             align-self: self-start;
           }
@@ -1005,7 +980,7 @@ body {
       padding-bottom: 0; //calc(var(--bs-gutter-x) * 0.250);
     }
     .navbar-dark {
-      --bs-navbar-brand-color: #{$quaternary-shade};
+      --bs-navbar-brand-color: #{$white};
       --bs-navbar-brand-hover-color: #{$quaternary-shade};
       transition: background-color 0.5s;
       &.bg-dark.intersected {
@@ -1227,7 +1202,7 @@ body {
 
     .navbar-dark {
       ul.dropdown-menu {
-        --bs-dropdown-bg: var(--bs-body-color);
+        --bs-dropdown-bg: var(--bs-pirmary);
         --bs-dropdown-link-color: #{$white};
         --bs-dropdown-min-width: 12rem;
         .dropdown-item  {
@@ -1604,7 +1579,6 @@ body.scrolled {
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-
   }
 }
 body:not(.scrolled) {
@@ -1791,6 +1765,175 @@ a.highlighted_pumpkin {
     }
   }
 }
+
+#drupal-off-canvas-wrapper > div:not(.ui-resizable-handle,.ui-dialog-titlebar) *:where(:not(details *, [data-drupal-messages] *, svg, svg *, .ck-reset *, [data-drupal-ck-style-fence] *, .ui-resizable-handle)),
+#drupal-off-canvas-wrapper *:where(.ui-dialog-titlebar *:not(svg, svg *))
+{
+  all: revert;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
+}
+
+#drupal-off-canvas-wrapper *:where(.ui-dialog-titlebar *:not(svg, svg *))
+{
+  all: revert;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
+}
+
+#drupal-off-canvas-wrapper > div:not(.ui-resizable-handle,.ui-dialog-titlebar) *:where(:not(details *, [data-drupal-messages] *, svg, svg *, .ck-reset *, [data-drupal-ck-style-fence] *, .ui-resizable-handle)):after,
+#drupal-off-canvas-wrapper > div:not(.ui-resizable-handle,.ui-dialog-titlebar) *:where(:not(details *, [data-drupal-messages] *, svg, svg *, .ck-reset *, [data-drupal-ck-style-fence] *, .ui-resizable-handle)):before,
+#drupal-off-canvas-wrapper *:where(.ui-dialog-titlebar *:not(svg, svg *)):before,
+#drupal-off-canvas-wrapper *:where(.ui-dialog-titlebar *:not(svg, svg *)):after
+{
+  all: revert;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+/**
+ * Set base styles for the off-canvas dialog.
+ * @internal
+
+
+#drupal-off-canvas-wrapper *:where(:not(svg, svg *, .ck-reset *, [data-drupal-ck-style-fence] *, .ui-resizable-handle)) {
+  all: revert;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
+}
+
+#drupal-off-canvas-wrapper *:where(:not(svg, svg *, .ck-reset *, [data-drupal-ck-style-fence] *, .ui-resizable-handle)):after,
+#drupal-off-canvas-wrapper *:where(:not(svg, svg *, .ck-reset *, [data-drupal-ck-style-fence] *, .ui-resizable-handle)):before {
+  all: revert;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+*/
+
+#drupal-off-canvas-wrapper *:not(details) a,
+#drupal-off-canvas-wrapper *:not(details) .link {
+  text-decoration: none;
+  color: var(--off-canvas-link-color);
+}
+
+#drupal-off-canvas-wrapper *:not(details) hr {
+  height: 1px;
+  background: var(--off-canvas-border-color);
+}
+
+#drupal-off-canvas-wrapper *:not(details) h1,
+#drupal-off-canvas-wrapper .heading-a {
+  font-size: 1.4375rem;
+  line-height: 1.2;
+}
+
+#drupal-off-canvas-wrapper *:not(details) h2,
+#drupal-off-canvas-wrapper .heading-b {
+  margin: var(--off-canvas-vertical-spacing-unit) 0;
+  font-size: 1.1875rem;
+}
+
+#drupal-off-canvas-wrapper *:not(details) h3,
+#drupal-off-canvas-wrapper .heading-c {
+  margin: var(--off-canvas-vertical-spacing-unit) 0;
+  /* font-size: 1.0625rem; */
+
+}
+
+#drupal-off-canvas-wrapper *:not(details) h4,
+#drupal-off-canvas-wrapper .heading-d {
+  margin: var(--off-canvas-vertical-spacing-unit) 0;
+  font-size: 1rem;
+}
+
+#drupal-off-canvas-wrapper *:not(details) h5,
+#drupal-off-canvas-wrapper .heading-e,
+#drupal-off-canvas-wrapper *:not(details) h6,
+#drupal-off-canvas-wrapper .heading-f {
+  margin: var(--off-canvas-vertical-spacing-unit) 0;
+  font-size: 0.9375rem;
+}
+
+#drupal-off-canvas-wrapper *:not(details) p {
+  margin: var(--off-canvas-vertical-spacing-unit) 0;
+}
+
+#drupal-off-canvas-wrapper *:not(details) img {
+  max-width: 100%;
+  height: auto;
+}
+
+#drupal-off-canvas-wrapper *:not(details) .links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#drupal-off-canvas-wrapper *:not(details) .links li {
+  margin: calc(var(--off-canvas-vertical-spacing-unit) /2) 0;
+}
+
+.archipelago-hamilton-theme #drupal-off-canvas-wrapper summary {
+  margin: 1rem 0.5rem;
+}
+
+.archipelago-hamilton-theme #drupal-off-canvas-wrapper .fieldset, .archipelago-hamilton-theme #drupal-off-canvas-wrapper fieldset {
+  border:none;
+}
+
+.archipelago-hamilton-theme #drupal-off-canvas-wrapper table {
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.archipelago-hamilton-theme #drupal-off-canvas-wrapper {
+  --off-canvas-vertical-spacing-unit: 0.5rem;
+  --off-canvas-padding: 0rem;
+  --off-canvas-focus-outline-width: 2px;
+  padding: 0 var(--off-canvas-padding) var(--off-canvas-padding);
+  --off-canvas-first-cell-padding-start: 0.5rem;
+}
+
+.archipelago-hamilton-theme #drupal-off-canvas-wrapper table {
+  --bs-table-bg: var(--off-canvas-background-color-dark);
+}
+
+.archipelago-hamilton-theme #drupal-off-canvas-wrapper details {
+  --off-canvas-padding: 1.25rem;
+  --off-canvas-vertical-spacing-unit: 0.5rem;
+  --off-canvas-details-border-width: 0;
+  --off-canvas-details-summary-padding: 0.625rem 1.25rem;
+  --off-canvas-details-summary-font-size: 0.875rem;
+  --off-canvas-details-background-color: var(--bs-body-bg);
+  --off-canvas-details-text-color: var(--bs-body-color);
+}
+
+.archipelago-hamilton-theme #drupal-off-canvas-wrapper tr {
+  border-bottom: none;
+}
+.archipelago-hamilton-theme #drupal-off-canvas-wrapper th:first-child {
+  --off-canvas-table-cell-padding: 2px;
+  display: flex;
+  align-items: center;
+  min-height: 3.125rem;
+  gap: var(--off-canvas-table-cell-padding);
+}
+
+.archipelago-hamilton-theme #drupal-off-canvas-wrapper table tr th,
+.archipelago-hamilton-theme #drupal-off-canvas-wrapper table tr th a,
+.archipelago-hamilton-theme #drupal-off-canvas-wrapper table tr th a:hover,
+.archipelago-hamilton-theme #drupal-off-canvas-wrapper table tr th a:focus {
+  color: var(--off-canvas-background-color-light);
+}
+
+.archipelago-hamilton-theme #drupal-off-canvas-wrapper .table >:not(caption)>*>td {
+  background-color: unset;
+}
+
+
 
 
 
