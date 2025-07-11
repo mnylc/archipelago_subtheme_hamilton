@@ -46,7 +46,7 @@ $nav-link-font-weight: $font-weight-normal;
 .site-name-slogan {
   font-size: $navbar-brand-font-size;
 }
-#navbar-main {
+#navbar-main, .highlighted {
   h1,h2,h3,h4,h5 {
     font-family: $font-family-serif;
   }
