@@ -47,7 +47,26 @@ $nav-link-font-weight: $font-weight-normal;
   font-size: $navbar-brand-font-size;
 }
 #navbar-main, .highlighted {
+  h1 {
+    font-size: $h1-font-size * 1.1;
+  }
+  h2 {
+    font-size: $h2-font-size * 1.1;
+  }
+  h3 {
+    font-size: $h3-font-size * 1.1;
+  }
+  h4 {
+    font-size: $h4-font-size * 1.1;
+  }
+  h5 {
+    font-size: $h5-font-size * 1.1;
+  }
+  h6 {
+    font-size: $h6-font-size * 1.1;
+  }
   h1,h2,h3,h4,h5 {
+
     font-family: $font-family-serif;
   }
 }
