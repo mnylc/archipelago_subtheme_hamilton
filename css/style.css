@@ -17745,9 +17745,11 @@ body {
   background: #d0d0d0;
   border-color: white;
 }
+
 :root .archipelago-hamilton-theme div.content div[data-history-node-id] div.field:last-of-type {
   margin-bottom: 2rem;
 }
+
 :root .archipelago-hamilton-theme #block-archipelago-subtheme-hamilton-content .view {
   position: relative;
   overflow: visible;

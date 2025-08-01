@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+{{ title_suffix.contextual_links }}
+
+  {{ ds_content }}
+<hr style="color:#d6ba8b;height:2px;border-width:1px;">
+
+</{{ ds_content_wrapper }}>
