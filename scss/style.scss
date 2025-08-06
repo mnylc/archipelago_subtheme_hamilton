@@ -575,6 +575,9 @@ body {
 
   /* Rest of the pages Page exception */
   .archipelago-hamilton-theme {
+    pre {
+      white-space: break-spaces;
+    }
     .pagination {
         --bs-pagination-active-bg: #b0defc;
         --bs-pagination-active-color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
